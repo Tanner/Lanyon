@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "DHLJekyll.h"
+
 @interface DHLDocument : NSDocument
+
+@property (nonatomic, retain) DHLJekyll *jekyll;
 
 @end

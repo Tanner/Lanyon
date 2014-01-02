@@ -12,13 +12,16 @@
 		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
 		C3C89AF51875D3DB002EA2B3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AF31875D3DB002EA2B3 /* Credits.rtf */; };
 		C3C89AF81875D3DB002EA2B3 /* DHLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */; };
-		C3C89AFB1875D3DB002EA2B3 /* DHLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */; };
 		C3C89AFE1875D3DB002EA2B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */; };
 		C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */; };
 		C3C89B071875D3DB002EA2B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89B061875D3DB002EA2B3 /* XCTest.framework */; };
 		C3C89B081875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
 		C3C89B101875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89B0E1875D3DB002EA2B3 /* InfoPlist.strings */; };
 		C3C89B121875D3DB002EA2B3 /* LanyonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B111875D3DB002EA2B3 /* LanyonTests.m */; };
+		C3C89B1C1875E1D5002EA2B3 /* DHLCreationSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */; };
+		C3C89B201875F041002EA2B3 /* DHLWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B1E1875F041002EA2B3 /* DHLWindowController.m */; };
+		C3C89B211875F041002EA2B3 /* DHLWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */; };
+		C3C89B2618762687002EA2B3 /* DHLJekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2518762687002EA2B3 /* DHLJekyll.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,6 @@
 		C3C89AF41875D3DB002EA2B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		C3C89AF61875D3DB002EA2B3 /* DHLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLDocument.h; sourceTree = "<group>"; };
 		C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLDocument.m; sourceTree = "<group>"; };
-		C3C89AFA1875D3DB002EA2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DHLDocument.xib; sourceTree = "<group>"; };
 		C3C89AFD1875D3DB002EA2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3C89B051875D3DB002EA2B3 /* LanyonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanyonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,12 @@
 		C3C89B0D1875D3DB002EA2B3 /* LanyonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LanyonTests-Info.plist"; sourceTree = "<group>"; };
 		C3C89B0F1875D3DB002EA2B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3C89B111875D3DB002EA2B3 /* LanyonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanyonTests.m; sourceTree = "<group>"; };
+		C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHLCreationSheet.xib; sourceTree = "<group>"; };
+		C3C89B1D1875F041002EA2B3 /* DHLWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLWindowController.h; sourceTree = "<group>"; };
+		C3C89B1E1875F041002EA2B3 /* DHLWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLWindowController.m; sourceTree = "<group>"; };
+		C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHLWindowController.xib; sourceTree = "<group>"; };
+		C3C89B2418762687002EA2B3 /* DHLJekyll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLJekyll.h; sourceTree = "<group>"; };
+		C3C89B2518762687002EA2B3 /* DHLJekyll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLJekyll.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +127,12 @@
 			children = (
 				C3C89AF61875D3DB002EA2B3 /* DHLDocument.h */,
 				C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */,
-				C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */,
+				C3C89B1D1875F041002EA2B3 /* DHLWindowController.h */,
+				C3C89B1E1875F041002EA2B3 /* DHLWindowController.m */,
+				C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */,
+				C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */,
+				C3C89B2418762687002EA2B3 /* DHLJekyll.h */,
+				C3C89B2518762687002EA2B3 /* DHLJekyll.m */,
 				C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */,
 				C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */,
 				C3C89AEB1875D3DB002EA2B3 /* Supporting Files */,
@@ -234,9 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3C89AFB1875D3DB002EA2B3 /* DHLDocument.xib in Resources */,
 				C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */,
+				C3C89B211875F041002EA2B3 /* DHLWindowController.xib in Resources */,
 				C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */,
+				C3C89B1C1875E1D5002EA2B3 /* DHLCreationSheet.xib in Resources */,
 				C3C89AF51875D3DB002EA2B3 /* Credits.rtf in Resources */,
 				C3C89AFE1875D3DB002EA2B3 /* MainMenu.xib in Resources */,
 			);
@@ -258,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C89AF11875D3DB002EA2B3 /* main.m in Sources */,
+				C3C89B2618762687002EA2B3 /* DHLJekyll.m in Sources */,
+				C3C89B201875F041002EA2B3 /* DHLWindowController.m in Sources */,
 				C3C89AF81875D3DB002EA2B3 /* DHLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,14 +311,6 @@
 				C3C89AF41875D3DB002EA2B3 /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3C89AFA1875D3DB002EA2B3 /* Base */,
-			);
-			name = DHLDocument.xib;
 			sourceTree = "<group>";
 		};
 		C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */ = {
