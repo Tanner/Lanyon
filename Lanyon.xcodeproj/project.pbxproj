@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
+		C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */; };
+		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
+		C3C89AF51875D3DB002EA2B3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AF31875D3DB002EA2B3 /* Credits.rtf */; };
+		C3C89AF81875D3DB002EA2B3 /* DHLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */; };
+		C3C89AFB1875D3DB002EA2B3 /* DHLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */; };
+		C3C89AFE1875D3DB002EA2B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */; };
+		C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */; };
+		C3C89B071875D3DB002EA2B3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89B061875D3DB002EA2B3 /* XCTest.framework */; };
+		C3C89B081875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
+		C3C89B101875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89B0E1875D3DB002EA2B3 /* InfoPlist.strings */; };
+		C3C89B121875D3DB002EA2B3 /* LanyonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B111875D3DB002EA2B3 /* LanyonTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3C89B091875D3DB002EA2B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3C89AD91875D3DB002EA2B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3C89AE01875D3DB002EA2B3;
+			remoteInfo = Lanyon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3C89AE11875D3DB002EA2B3 /* Lanyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lanyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C3C89AE71875D3DB002EA2B3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C3C89AE81875D3DB002EA2B3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3C89AE91875D3DB002EA2B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3C89AEC1875D3DB002EA2B3 /* Lanyon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lanyon-Info.plist"; sourceTree = "<group>"; };
+		C3C89AEE1875D3DB002EA2B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3C89AF01875D3DB002EA2B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3C89AF21875D3DB002EA2B3 /* Lanyon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lanyon-Prefix.pch"; sourceTree = "<group>"; };
+		C3C89AF41875D3DB002EA2B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C3C89AF61875D3DB002EA2B3 /* DHLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLDocument.h; sourceTree = "<group>"; };
+		C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHLDocument.m; sourceTree = "<group>"; };
+		C3C89AFA1875D3DB002EA2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DHLDocument.xib; sourceTree = "<group>"; };
+		C3C89AFD1875D3DB002EA2B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3C89B051875D3DB002EA2B3 /* LanyonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanyonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C89B061875D3DB002EA2B3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3C89B0D1875D3DB002EA2B3 /* LanyonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LanyonTests-Info.plist"; sourceTree = "<group>"; };
+		C3C89B0F1875D3DB002EA2B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3C89B111875D3DB002EA2B3 /* LanyonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanyonTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3C89ADE1875D3DB002EA2B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C89B021875D3DB002EA2B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89B081875D3DB002EA2B3 /* Cocoa.framework in Frameworks */,
+				C3C89B071875D3DB002EA2B3 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3C89AD81875D3DB002EA2B3 = {
+			isa = PBXGroup;
+			children = (
+				C3C89AEA1875D3DB002EA2B3 /* Lanyon */,
+				C3C89B0B1875D3DB002EA2B3 /* LanyonTests */,
+				C3C89AE31875D3DB002EA2B3 /* Frameworks */,
+				C3C89AE21875D3DB002EA2B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3C89AE21875D3DB002EA2B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89AE11875D3DB002EA2B3 /* Lanyon.app */,
+				C3C89B051875D3DB002EA2B3 /* LanyonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3C89AE31875D3DB002EA2B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */,
+				C3C89B061875D3DB002EA2B3 /* XCTest.framework */,
+				C3C89AE61875D3DB002EA2B3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3C89AE61875D3DB002EA2B3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89AE71875D3DB002EA2B3 /* AppKit.framework */,
+				C3C89AE81875D3DB002EA2B3 /* CoreData.framework */,
+				C3C89AE91875D3DB002EA2B3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C3C89AEA1875D3DB002EA2B3 /* Lanyon */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89AF61875D3DB002EA2B3 /* DHLDocument.h */,
+				C3C89AF71875D3DB002EA2B3 /* DHLDocument.m */,
+				C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */,
+				C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */,
+				C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */,
+				C3C89AEB1875D3DB002EA2B3 /* Supporting Files */,
+			);
+			path = Lanyon;
+			sourceTree = "<group>";
+		};
+		C3C89AEB1875D3DB002EA2B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89AEC1875D3DB002EA2B3 /* Lanyon-Info.plist */,
+				C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */,
+				C3C89AF01875D3DB002EA2B3 /* main.m */,
+				C3C89AF21875D3DB002EA2B3 /* Lanyon-Prefix.pch */,
+				C3C89AF31875D3DB002EA2B3 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3C89B0B1875D3DB002EA2B3 /* LanyonTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89B111875D3DB002EA2B3 /* LanyonTests.m */,
+				C3C89B0C1875D3DB002EA2B3 /* Supporting Files */,
+			);
+			path = LanyonTests;
+			sourceTree = "<group>";
+		};
+		C3C89B0C1875D3DB002EA2B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89B0D1875D3DB002EA2B3 /* LanyonTests-Info.plist */,
+				C3C89B0E1875D3DB002EA2B3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3C89AE01875D3DB002EA2B3 /* Lanyon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3C89B151875D3DB002EA2B3 /* Build configuration list for PBXNativeTarget "Lanyon" */;
+			buildPhases = (
+				C3C89ADD1875D3DB002EA2B3 /* Sources */,
+				C3C89ADE1875D3DB002EA2B3 /* Frameworks */,
+				C3C89ADF1875D3DB002EA2B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lanyon;
+			productName = Lanyon;
+			productReference = C3C89AE11875D3DB002EA2B3 /* Lanyon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3C89B041875D3DB002EA2B3 /* LanyonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3C89B181875D3DB002EA2B3 /* Build configuration list for PBXNativeTarget "LanyonTests" */;
+			buildPhases = (
+				C3C89B011875D3DB002EA2B3 /* Sources */,
+				C3C89B021875D3DB002EA2B3 /* Frameworks */,
+				C3C89B031875D3DB002EA2B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3C89B0A1875D3DB002EA2B3 /* PBXTargetDependency */,
+			);
+			name = LanyonTests;
+			productName = LanyonTests;
+			productReference = C3C89B051875D3DB002EA2B3 /* LanyonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3C89AD91875D3DB002EA2B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DHL;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Tanner Smith";
+				TargetAttributes = {
+					C3C89B041875D3DB002EA2B3 = {
+						TestTargetID = C3C89AE01875D3DB002EA2B3;
+					};
+				};
+			};
+			buildConfigurationList = C3C89ADC1875D3DB002EA2B3 /* Build configuration list for PBXProject "Lanyon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3C89AD81875D3DB002EA2B3;
+			productRefGroup = C3C89AE21875D3DB002EA2B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3C89AE01875D3DB002EA2B3 /* Lanyon */,
+				C3C89B041875D3DB002EA2B3 /* LanyonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3C89ADF1875D3DB002EA2B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89AFB1875D3DB002EA2B3 /* DHLDocument.xib in Resources */,
+				C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */,
+				C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */,
+				C3C89AF51875D3DB002EA2B3 /* Credits.rtf in Resources */,
+				C3C89AFE1875D3DB002EA2B3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C89B031875D3DB002EA2B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89B101875D3DB002EA2B3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3C89ADD1875D3DB002EA2B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89AF11875D3DB002EA2B3 /* main.m in Sources */,
+				C3C89AF81875D3DB002EA2B3 /* DHLDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3C89B011875D3DB002EA2B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3C89B121875D3DB002EA2B3 /* LanyonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3C89B0A1875D3DB002EA2B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3C89AE01875D3DB002EA2B3 /* Lanyon */;
+			targetProxy = C3C89B091875D3DB002EA2B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3C89AEE1875D3DB002EA2B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3C89AF31875D3DB002EA2B3 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3C89AF41875D3DB002EA2B3 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C3C89AF91875D3DB002EA2B3 /* DHLDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3C89AFA1875D3DB002EA2B3 /* Base */,
+			);
+			name = DHLDocument.xib;
+			sourceTree = "<group>";
+		};
+		C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3C89AFD1875D3DB002EA2B3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C3C89B0E1875D3DB002EA2B3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3C89B0F1875D3DB002EA2B3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3C89B131875D3DB002EA2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C3C89B141875D3DB002EA2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C3C89B161875D3DB002EA2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
+				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3C89B171875D3DB002EA2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
+				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3C89B191875D3DB002EA2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lanyon.app/Contents/MacOS/Lanyon";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LanyonTests/LanyonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3C89B1A1875D3DB002EA2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Lanyon.app/Contents/MacOS/Lanyon";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
+				INFOPLIST_FILE = "LanyonTests/LanyonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3C89ADC1875D3DB002EA2B3 /* Build configuration list for PBXProject "Lanyon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C89B131875D3DB002EA2B3 /* Debug */,
+				C3C89B141875D3DB002EA2B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3C89B151875D3DB002EA2B3 /* Build configuration list for PBXNativeTarget "Lanyon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C89B161875D3DB002EA2B3 /* Debug */,
+				C3C89B171875D3DB002EA2B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3C89B181875D3DB002EA2B3 /* Build configuration list for PBXNativeTarget "LanyonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3C89B191875D3DB002EA2B3 /* Debug */,
+				C3C89B1A1875D3DB002EA2B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3C89AD91875D3DB002EA2B3 /* Project object */;
+}
