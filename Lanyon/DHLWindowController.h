@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DHLWindowController : NSWindowController <NSTextFieldDelegate>
+@interface DHLWindowController : NSWindowController <NSTextFieldDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) BOOL creation;
 

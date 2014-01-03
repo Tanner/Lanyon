@@ -13,4 +13,8 @@
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *title;
 
+@property (nonatomic, retain) NSMutableArray *posts;
+
+- (void)loadPosts;
+
 @end

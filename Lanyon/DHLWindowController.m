@@ -9,6 +9,7 @@
 #import "DHLWindowController.h"
 
 #import "DHLDocument.h"
+#import "DHLPostTableCellView.h"
 
 @interface DHLWindowController ()
 
@@ -25,6 +26,9 @@
     
     return self;
 }
+
+#pragma mark -
+#pragma mark Creation Sheet
 
 - (void)windowDidLoad
 {
@@ -91,6 +95,42 @@
     } else {
         [creationSheetCreateButton setEnabled:NO];
     }
+}
+
+#pragma mark -
+#pragma mark Table View Data Source
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    DHLDocument *document = (DHLDocument *)self.document;
+    DHLJekyll *jekyll = [document jekyll];
+    NSArray *posts = [jekyll posts];
+    
+    if (!posts) {
+        [jekyll loadPosts];
+    }
+    
+    return [[jekyll posts] count];
+}
+
+#pragma mark -
+#pragma mark Table View Delegate
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    NSString *post = [self postForRow:row];
+    
+    DHLPostTableCellView *cellView = [tableView makeViewWithIdentifier:@"PostCell" owner:self];
+    
+    cellView.title.stringValue = post;
+    cellView.contents.stringValue = post;
+    
+    return cellView;
+}
+
+- (NSString *)postForRow:(NSInteger)row {
+    DHLDocument *document = (DHLDocument *)self.document;
+    DHLJekyll *jekyll = [document jekyll];
+    
+    return [[jekyll posts] objectAtIndex:row];
 }
 
 @end
