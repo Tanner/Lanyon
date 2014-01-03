@@ -21,6 +21,7 @@
 
 @synthesize postsTableView;
 @synthesize creation, creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
+@synthesize postCount;
 
 - (id)init {
     if (self = [super initWithWindowNibName:@"DHLWindowController"]) {
@@ -41,6 +42,14 @@
     
     if (creation) {
         [self showCreationSheet];
+    }
+    
+    DHLJekyll *jekyll = [(DHLDocument *)[self document] jekyll];
+    
+    if (jekyll) {
+        [jekyll loadPosts];
+        
+        postCount.stringValue = [NSString stringWithFormat:@"%ld Posts", (unsigned long) [[jekyll posts] count]];
     }
 }
 

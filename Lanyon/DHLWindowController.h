@@ -19,6 +19,8 @@
 
 @property (assign) IBOutlet NSTableView *postsTableView;
 
+@property (assign) IBOutlet NSTextField *postCount;
+
 - (IBAction)creationSheetChoosePath:(id)sender;
 - (IBAction)creationSheetCancel:(id)sender;
 - (IBAction)creationSheetCreate:(id)sender;

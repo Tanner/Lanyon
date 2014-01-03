@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DHLWindowController">
             <connections>
+                <outlet property="postCount" destination="jdC-DP-WGc" id="23U-T4-zz0"/>
                 <outlet property="postsTableView" destination="1IW-Vn-zkG" id="1Pl-KV-0Oy"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
@@ -22,14 +23,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpI-Jh-Elw">
-                        <rect key="frame" x="0.0" y="0.0" width="448" height="394"/>
+                        <rect key="frame" x="0.0" y="32" width="448" height="362"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="Rid-Zo-Lfn">
-                            <rect key="frame" x="0.0" y="0.0" width="448" height="394"/>
+                            <rect key="frame" x="0.0" y="0.0" width="448" height="362"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="1IW-Vn-zkG">
-                                    <rect key="frame" x="0.0" y="0.0" width="448" height="394"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="448" height="362"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,14 +122,27 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jdC-DP-WGc">
+                        <rect key="frame" x="18" y="8" width="412" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Post Count" id="G5c-dp-6uZ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VpI-Jh-Elw" firstAttribute="top" secondItem="2" secondAttribute="top" id="4BZ-aW-orv"/>
-                    <constraint firstAttribute="bottom" secondItem="VpI-Jh-Elw" secondAttribute="bottom" id="MD1-7V-jAi"/>
+                    <constraint firstAttribute="bottom" secondItem="VpI-Jh-Elw" secondAttribute="bottom" constant="32" id="MD1-7V-jAi"/>
+                    <constraint firstAttribute="trailing" secondItem="jdC-DP-WGc" secondAttribute="trailing" constant="20" id="Wln-mB-bo5"/>
                     <constraint firstItem="VpI-Jh-Elw" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="eXA-1I-PUx"/>
                     <constraint firstAttribute="trailing" secondItem="VpI-Jh-Elw" secondAttribute="trailing" id="qco-HA-UvC"/>
+                    <constraint firstAttribute="bottom" secondItem="jdC-DP-WGc" secondAttribute="bottom" constant="8" id="tgg-si-Xrf"/>
+                    <constraint firstItem="jdC-DP-WGc" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="vwI-cT-Zl8"/>
                 </constraints>
             </view>
+            <contentBorderThickness minY="32"/>
             <connections>
                 <outlet property="delegate" destination="-2" id="4"/>
             </connections>
