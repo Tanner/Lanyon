@@ -19,6 +19,7 @@
 
 @implementation DHLWindowController
 
+@synthesize postsTableView;
 @synthesize creation, creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
 
 - (id)init {
@@ -29,8 +30,10 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Creation Sheet
+- (void)awakeFromNib {
+    [postsTableView setTarget:self];
+    [postsTableView setDoubleAction:@selector(tableViewClicked)];
+}
 
 - (void)windowDidLoad
 {
@@ -40,6 +43,9 @@
         [self showCreationSheet];
     }
 }
+
+#pragma mark -
+#pragma mark Creation Sheet
 
 - (void)showCreationSheet {
     if (!creationSheet) {
@@ -127,6 +133,13 @@
     cellView.date.stringValue = [post.parsedYAML objectForKey:@"date"];
     
     return cellView;
+}
+
+- (void)tableViewClicked {
+    NSInteger row = [postsTableView clickedRow];
+    DHLPost *post = [self postForRow:row];
+    
+    [[NSWorkspace sharedWorkspace] openURL:[post path]];
 }
 
 - (DHLPost *)postForRow:(NSInteger)row {

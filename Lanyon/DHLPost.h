@@ -10,7 +10,7 @@
 
 @interface DHLPost : NSObject
 
-@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSURL *path;
 @property (nonatomic, retain) NSString *contents;
 
 @property (nonatomic, retain) NSString *yaml;
@@ -18,6 +18,6 @@
 
 @property (nonatomic, retain) NSDictionary *parsedYAML;
 
-- (id)initWithPath:(NSString *)aPath;
+- (id)initWithPath:(NSURL *)aPath;
 
 @end

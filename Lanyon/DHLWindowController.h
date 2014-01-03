@@ -17,6 +17,8 @@
 @property (assign) IBOutlet NSTextField *creationSheetTitle;
 @property (assign) IBOutlet NSButton *creationSheetCreateButton;
 
+@property (assign) IBOutlet NSTableView *postsTableView;
+
 - (IBAction)creationSheetChoosePath:(id)sender;
 - (IBAction)creationSheetCancel:(id)sender;
 - (IBAction)creationSheetCreate:(id)sender;

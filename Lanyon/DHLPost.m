@@ -15,12 +15,12 @@
 @synthesize path, contents;
 @synthesize yaml, text, parsedYAML;
 
-- (id)initWithPath:(NSString *)aPath {
+- (id)initWithPath:(NSURL *)aPath {
     if (self = [super init]) {
         path = aPath;
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSData *data = [fileManager contentsAtPath:path];
+        NSData *data = [fileManager contentsAtPath:(NSString *) path];
         
         contents = [[NSString alloc] initWithBytes:[data bytes]
                                             length:[data length]

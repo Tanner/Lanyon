@@ -33,7 +33,7 @@
             posts = [[NSMutableArray alloc] init];
             
             [postFiles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSString *postPath = (NSString *) obj;
+                NSURL *postPath = (NSURL *) obj;
                 
                 [posts addObject:[[DHLPost alloc] initWithPath:postPath]];
             }];
