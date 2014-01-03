@@ -60,7 +60,7 @@
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    jekyll = [NSUnarchiver unarchiveObjectWithData:data];
+    jekyll = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
     return YES;
 }

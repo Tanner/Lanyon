@@ -16,16 +16,16 @@
 #pragma mark NSCoding
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [self init]) {
-        path = [aDecoder valueForKey:@"path"];
-        title = [aDecoder valueForKey:@"title"];
+        path = [aDecoder decodeObjectForKey:@"path"];
+        title = [aDecoder decodeObjectForKey:@"title"];
     }
     
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder setValue:path forKey:@"path"];
-    [aCoder setValue:title forKey:@"title"];
+    [aCoder encodeObject:path forKey:@"path"];
+    [aCoder encodeObject:title forKey:@"title"];
 }
 
 @end
