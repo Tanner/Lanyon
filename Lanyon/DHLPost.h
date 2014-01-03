@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSString *yaml;
 @property (nonatomic, retain) NSString *text;
 
+@property (nonatomic, retain) NSDictionary *parsedYAML;
+
 - (id)initWithPath:(NSString *)aPath;
 
 @end

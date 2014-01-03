@@ -6,12 +6,14 @@
 //  Copyright (c) 2014 Tanner Smith. All rights reserved.
 //
 
+#import <YAML/YAMLSerialization.h>
+
 #import "DHLPost.h"
 
 @implementation DHLPost
 
 @synthesize path, contents;
-@synthesize yaml, text;
+@synthesize yaml, text, parsedYAML;
 
 - (id)initWithPath:(NSString *)aPath {
     if (self = [super init]) {
@@ -30,6 +32,12 @@
         text = components[2];
         
         text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        yaml = [NSString stringWithFormat:@"---%@---", yaml];
+        
+        parsedYAML = [[YAMLSerialization objectsWithYAMLString:yaml
+                                                      options:kYAMLReadOptionStringScalars
+                                                        error:nil] objectAtIndex:0];
     }
     
     return self;
