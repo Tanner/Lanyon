@@ -66,7 +66,11 @@
 }
 
 - (void)previewJekyll {
-    [jekyll preview];
+    if ([jekyll isPreviewing]) {
+        [jekyll stopPreview];
+    } else {
+        [jekyll startPreview];
+    }
 }
 
 @end

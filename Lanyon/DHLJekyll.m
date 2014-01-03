@@ -54,43 +54,58 @@
     }
 }
 
-- (void)preview {
-    if (!previewTask) {
-        previewTask = [[NSTask alloc] init];
+#pragma mark -
+#pragma mark Preview - `jekyll serve`
 
-        [previewTask setLaunchPath:@"/bin/bash"];
-        [previewTask setCurrentDirectoryPath:path];
-
-        [previewTask setArguments:@[@"-c", @"jekyll serve --watch"]];
+- (void)startPreview {
+    if (previewTask) {
+        if ([previewTask isRunning]) {
+            return;
+        } else {
+            previewTask = nil;
+        }
     }
     
+    previewTask = [[NSTask alloc] init];
+
+    [previewTask setLaunchPath:@"/bin/bash"];
+    [previewTask setCurrentDirectoryPath:path];
+
+    [previewTask setArguments:@[@"-c", @"jekyll serve --watch"]];
+    
+    NSPipe *pipe = [NSPipe pipe];
+    NSFileHandle *fileHandle = [pipe fileHandleForReading];
+
+    [previewTask setStandardOutput:pipe];
+    [previewTask launch];
+    
+    dispatch_async(jekyllQueue, ^{
+        NSData *data = nil;
+        NSMutableData *taskData = [NSMutableData data];
+        
+        while ((data = [fileHandle availableData]) && [data length]) {
+            [taskData appendData:data];
+            
+            NSString *output = [[NSString alloc] initWithData:taskData encoding:NSUTF8StringEncoding];
+            
+            if ([output rangeOfString:@"Server running"].location != NSNotFound) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
+                break;
+            }
+        }
+    });
+}
+
+- (void)stopPreview {
     if ([previewTask isRunning]) {
         [previewTask terminate];
         
         previewTask = nil;
-    } else {
-        NSPipe *pipe = [NSPipe pipe];
-        NSFileHandle *fileHandle = [pipe fileHandleForReading];
-
-        [previewTask setStandardOutput:pipe];
-        [previewTask launch];
-        
-        dispatch_async(jekyllQueue, ^{
-            NSData *data = nil;
-            NSMutableData *taskData = [NSMutableData data];
-            
-            while ((data = [fileHandle availableData]) && [data length]) {
-                [taskData appendData:data];
-                
-                NSString *output = [[NSString alloc] initWithData:taskData encoding:NSUTF8StringEncoding];
-                
-                if ([output rangeOfString:@"Server running"].location != NSNotFound) {
-                    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
-                    break;
-                }
-            }
-        });
     }
+}
+
+- (BOOL)isPreviewing {
+    return [previewTask isRunning];
 }
 
 #pragma mark -

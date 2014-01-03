@@ -21,6 +21,8 @@
 
 - (void)loadPosts;
 
-- (void)preview;
+- (void)startPreview;
+- (void)stopPreview;
+- (BOOL)isPreviewing;
 
 @end
