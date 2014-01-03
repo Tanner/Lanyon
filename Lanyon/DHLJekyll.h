@@ -17,6 +17,8 @@
 
 @property (nonatomic, retain) NSTask *previewTask;
 
+@property (nonatomic, retain) dispatch_queue_t jekyllQueue;
+
 - (void)loadPosts;
 
 - (void)preview;

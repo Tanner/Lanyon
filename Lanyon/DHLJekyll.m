@@ -14,7 +14,15 @@
 
 @synthesize path, title;
 @synthesize posts;
-@synthesize previewTask;
+@synthesize previewTask, jekyllQueue;
+
+- (id)init {
+    if (self = [super init]) {
+        jekyllQueue = dispatch_queue_create("me.tannersmith.lanyon.jekyll", NULL);
+    }
+    
+    return self;
+}
 
 - (void)dealloc {
     [previewTask terminate];
@@ -58,10 +66,30 @@
     
     if ([previewTask isRunning]) {
         [previewTask terminate];
+        
+        previewTask = nil;
     } else {
+        NSPipe *pipe = [NSPipe pipe];
+        NSFileHandle *fileHandle = [pipe fileHandleForReading];
+
+        [previewTask setStandardOutput:pipe];
         [previewTask launch];
         
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
+        dispatch_async(jekyllQueue, ^{
+            NSData *data = nil;
+            NSMutableData *taskData = [NSMutableData data];
+            
+            while ((data = [fileHandle availableData]) && [data length]) {
+                [taskData appendData:data];
+                
+                NSString *output = [[NSString alloc] initWithData:taskData encoding:NSUTF8StringEncoding];
+                
+                if ([output rangeOfString:@"Server running"].location != NSNotFound) {
+                    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
+                    break;
+                }
+            }
+        });
     }
 }
 
