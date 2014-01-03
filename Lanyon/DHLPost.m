@@ -28,6 +28,8 @@
         
         yaml = components[1];
         text = components[2];
+        
+        text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     
     return self;
