@@ -124,6 +124,7 @@
     
     cellView.title.stringValue = [post.parsedYAML objectForKey:@"title"];
     cellView.contents.stringValue = post.text;
+    cellView.date.stringValue = [post.parsedYAML objectForKey:@"date"];
     
     return cellView;
 }

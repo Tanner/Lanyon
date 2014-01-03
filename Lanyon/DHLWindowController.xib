@@ -52,7 +52,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="xdn-KR-0jy">
-                                                            <rect key="frame" x="18" y="70" width="409" height="17"/>
+                                                            <rect key="frame" x="18" y="70" width="329" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Post Title" id="cpO-25-YPt">
                                                                 <font key="font" metaFont="systemBold"/>
@@ -72,18 +72,30 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q2C-Gg-cSR">
+                                                            <rect key="frame" x="363" y="70" width="64" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Post Date" id="o4s-JQ-Ujf">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="3j5-Fw-EUf" firstAttribute="leading" secondItem="9u7-xq-oM0" secondAttribute="leading" constant="20" symbolic="YES" id="9M4-s7-BTZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="q2C-Gg-cSR" secondAttribute="trailing" constant="20" id="JeC-7o-LzE"/>
                                                         <constraint firstItem="xdn-KR-0jy" firstAttribute="top" secondItem="9u7-xq-oM0" secondAttribute="top" constant="10" id="Wbz-cj-bGc"/>
+                                                        <constraint firstItem="q2C-Gg-cSR" firstAttribute="leading" secondItem="xdn-KR-0jy" secondAttribute="trailing" constant="20" id="dZF-QN-gqs"/>
                                                         <constraint firstAttribute="trailing" secondItem="3j5-Fw-EUf" secondAttribute="trailing" constant="20" symbolic="YES" id="gz3-ue-k3I"/>
-                                                        <constraint firstAttribute="trailing" secondItem="xdn-KR-0jy" secondAttribute="trailing" constant="20" symbolic="YES" id="hRr-0p-5df"/>
+                                                        <constraint firstItem="q2C-Gg-cSR" firstAttribute="top" secondItem="9u7-xq-oM0" secondAttribute="top" constant="10" id="hcZ-sP-wHC"/>
                                                         <constraint firstItem="xdn-KR-0jy" firstAttribute="leading" secondItem="9u7-xq-oM0" secondAttribute="leading" constant="20" symbolic="YES" id="kbG-cb-G02"/>
                                                         <constraint firstAttribute="bottom" secondItem="3j5-Fw-EUf" secondAttribute="bottom" constant="10" id="rW8-78-Kku"/>
                                                         <constraint firstItem="3j5-Fw-EUf" firstAttribute="top" secondItem="xdn-KR-0jy" secondAttribute="bottom" constant="10" id="wGe-dI-9KA"/>
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="contents" destination="3j5-Fw-EUf" id="9AB-hz-B1t"/>
+                                                        <outlet property="date" destination="q2C-Gg-cSR" id="Xb9-gR-A93"/>
                                                         <outlet property="title" destination="xdn-KR-0jy" id="LBJ-h4-X14"/>
                                                     </connections>
                                                 </tableCellView>

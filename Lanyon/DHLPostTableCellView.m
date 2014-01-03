@@ -10,6 +10,8 @@
 
 @implementation DHLPostTableCellView
 
+@synthesize title, contents, date;
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];

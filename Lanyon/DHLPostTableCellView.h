@@ -12,5 +12,6 @@
 
 @property (assign) IBOutlet NSTextField *title;
 @property (assign) IBOutlet NSTextField *contents;
+@property (assign) IBOutlet NSTextField *date;
 
 @end
