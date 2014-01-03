@@ -11,26 +11,26 @@
 @implementation DHLPost
 
 @synthesize path, contents;
+@synthesize yaml, text;
 
 - (id)initWithPath:(NSString *)aPath {
     if (self = [super init]) {
         path = aPath;
-    }
-    
-    return self;
-}
-
-- (NSString *)contents {
-    if (!contents) {
+        
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSData *data = [fileManager contentsAtPath:path];
         
         contents = [[NSString alloc] initWithBytes:[data bytes]
                                             length:[data length]
                                           encoding:NSUTF8StringEncoding];
+        
+        NSArray *components = [contents componentsSeparatedByString:@"---"];
+        
+        yaml = components[1];
+        text = components[2];
     }
     
-    return contents;
+    return self;
 }
 
 @end

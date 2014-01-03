@@ -13,6 +13,9 @@
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *contents;
 
+@property (nonatomic, retain) NSString *yaml;
+@property (nonatomic, retain) NSString *text;
+
 - (id)initWithPath:(NSString *)aPath;
 
 @end

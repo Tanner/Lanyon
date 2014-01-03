@@ -123,7 +123,7 @@
     DHLPostTableCellView *cellView = [tableView makeViewWithIdentifier:@"PostCell" owner:self];
     
     cellView.title.stringValue = post.path;
-    cellView.contents.stringValue = post.contents;
+    cellView.contents.stringValue = post.text;
     
     return cellView;
 }
