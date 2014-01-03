@@ -16,11 +16,11 @@
 
 @implementation DHLWindowController
 
-@synthesize creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
+@synthesize creation, creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
 
 - (id)init {
     if (self = [super initWithWindowNibName:@"DHLWindowController"]) {
-        
+        creation = NO;
     }
     
     return self;
@@ -30,7 +30,9 @@
 {
     [super windowDidLoad];
     
-    [self showCreationSheet];
+    if (creation) {
+        [self showCreationSheet];
+    }
 }
 
 - (void)showCreationSheet {

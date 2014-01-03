@@ -47,6 +47,12 @@
     return YES;
 }
 
+- (void)showWindows {
+    [[[self windowControllers] objectAtIndex:0] setCreation:jekyll == nil];
+    
+    [super showWindows];
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     return [NSKeyedArchiver archivedDataWithRootObject:jekyll];

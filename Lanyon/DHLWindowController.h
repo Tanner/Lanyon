@@ -10,6 +10,8 @@
 
 @interface DHLWindowController : NSWindowController <NSTextFieldDelegate>
 
+@property (assign) BOOL creation;
+
 @property (assign) IBOutlet NSWindow *creationSheet;
 @property (assign) IBOutlet NSTextField *creationSheetPath;
 @property (assign) IBOutlet NSTextField *creationSheetTitle;
