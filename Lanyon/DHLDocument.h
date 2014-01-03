@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) DHLJekyll *jekyll;
 
+- (void)previewJekyll;
+
 @end

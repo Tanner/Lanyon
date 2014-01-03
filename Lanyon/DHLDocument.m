@@ -65,4 +65,8 @@
     return YES;
 }
 
+- (void)previewJekyll {
+    [jekyll preview];
+}
+
 @end

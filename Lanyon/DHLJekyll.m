@@ -14,6 +14,11 @@
 
 @synthesize path, title;
 @synthesize posts;
+@synthesize previewTask;
+
+- (void)dealloc {
+    [previewTask terminate];
+}
 
 - (void)loadPosts {
     if (!posts) {
@@ -38,6 +43,25 @@
                 [posts addObject:[[DHLPost alloc] initWithPath:postPath]];
             }];
         }
+    }
+}
+
+- (void)preview {
+    if (!previewTask) {
+        previewTask = [[NSTask alloc] init];
+
+        [previewTask setLaunchPath:@"/bin/bash"];
+        [previewTask setCurrentDirectoryPath:path];
+
+        [previewTask setArguments:@[@"-c", @"jekyll serve --watch"]];
+    }
+    
+    if ([previewTask isRunning]) {
+        [previewTask terminate];
+    } else {
+        [previewTask launch];
+        
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
     }
 }
 

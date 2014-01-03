@@ -15,6 +15,10 @@
 
 @property (nonatomic, retain) NSMutableArray *posts;
 
+@property (nonatomic, retain) NSTask *previewTask;
+
 - (void)loadPosts;
+
+- (void)preview;
 
 @end

@@ -210,8 +210,12 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
         [toolbarItem setLabel:@"Preview"];
         [toolbarItem setPaletteLabel:[toolbarItem label]];
         [toolbarItem setToolTip:@"Preview your site"];
-        [toolbarItem setTarget:self];
         
+        [button setButtonType:NSToggleButton];
+        [button setState:NSOffState];
+        
+        [button setTarget:[self document]];
+        [button setAction:@selector(previewJekyll)];
         [button setImage:[NSImage imageNamed:NSImageNameQuickLookTemplate]];
         itemSize = NSMakeSize(50, 35);
     }
