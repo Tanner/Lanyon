@@ -46,11 +46,15 @@
     
     DHLJekyll *jekyll = [(DHLDocument *)[self document] jekyll];
     
+    NSUInteger numberOfPosts = 0;
+    
     if (jekyll) {
         [jekyll loadPosts];
-        
-        postCount.stringValue = [NSString stringWithFormat:@"%ld Posts", (unsigned long) [[jekyll posts] count]];
+
+        numberOfPosts = [[jekyll posts] count];
     }
+    
+    postCount.stringValue = [NSString stringWithFormat:@"%ld Posts", (unsigned long)numberOfPosts];
 }
 
 #pragma mark -
