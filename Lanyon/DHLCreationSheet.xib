@@ -94,6 +94,9 @@
                         <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dtI-R1-9OD">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="creationSheetCreate:" target="-2" id="HGQ-OG-to1"/>
