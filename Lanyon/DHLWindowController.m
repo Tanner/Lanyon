@@ -13,9 +13,8 @@
 
 #import "DHLPostTableCellView.h"
 
-@interface DHLWindowController ()
-
-@end
+static NSString *DHLNewPostToolbarItemIdentifier = @"LanyonToolbarNewPostItem";
+static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 
 @implementation DHLWindowController
 
@@ -34,6 +33,16 @@
 - (void)awakeFromNib {
     [postsTableView setTarget:self];
     [postsTableView setDoubleAction:@selector(tableViewClicked)];
+    
+    NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:@"DocumentToolbar"];
+    
+    [toolbar setAllowsUserCustomization:YES];
+    [toolbar setAutosavesConfiguration:YES];
+    [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
+    
+    [toolbar setDelegate:self];
+    
+    [[self window] setToolbar:toolbar];
 }
 
 - (void)windowDidLoad
@@ -160,6 +169,59 @@
     DHLJekyll *jekyll = [document jekyll];
     
     return [[jekyll posts] objectAtIndex:row];
+}
+
+#pragma mark -
+#pragma mark Toolbar Delegate
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar {
+    return @[DHLNewPostToolbarItemIdentifier,
+             DHLPreviewToolbarItemIdentifier,
+             NSToolbarFlexibleSpaceItemIdentifier,
+             NSToolbarSpaceItemIdentifier];
+}
+
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
+    return @[DHLNewPostToolbarItemIdentifier,
+             NSToolbarFlexibleSpaceItemIdentifier,
+             DHLPreviewToolbarItemIdentifier];
+}
+
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
+    NSToolbarItem *toolbarItem;
+    NSButton *button = [[NSButton alloc] init];
+    NSSize itemSize;
+    
+    [button setBezelStyle:NSTexturedRoundedBezelStyle];
+    
+    if ([itemIdentifier isEqualToString:DHLNewPostToolbarItemIdentifier]) {
+        toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
+        
+        [toolbarItem setLabel:@"New Post"];
+        [toolbarItem setPaletteLabel:[toolbarItem label]];
+        [toolbarItem setToolTip:@"Create a new post"];
+        [toolbarItem setTarget:self];
+        
+        [button setImage:[NSImage imageNamed:NSImageNameAddTemplate]];
+        itemSize = NSMakeSize(40, 35);
+    } else if ([itemIdentifier isEqualToString:DHLPreviewToolbarItemIdentifier]) {
+        toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
+        
+        [toolbarItem setLabel:@"Preview"];
+        [toolbarItem setPaletteLabel:[toolbarItem label]];
+        [toolbarItem setToolTip:@"Preview your site"];
+        [toolbarItem setTarget:self];
+        
+        [button setImage:[NSImage imageNamed:NSImageNameQuickLookTemplate]];
+        itemSize = NSMakeSize(50, 35);
+    }
+    
+    [toolbarItem setView:button];
+    [toolbarItem setMenuFormRepresentation:[[NSMenuItem alloc] initWithTitle:[toolbarItem label] action:nil keyEquivalent:@""]];
+    [toolbarItem setMaxSize:itemSize];
+    [toolbarItem setMinSize:itemSize];
+    
+    return toolbarItem;
 }
 
 @end
