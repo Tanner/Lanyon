@@ -24,6 +24,16 @@
 		C3C89B2618762687002EA2B3 /* DHLJekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2518762687002EA2B3 /* DHLJekyll.m */; };
 		C3C89B2918765472002EA2B3 /* DHLPostTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */; };
 		C3C89B2C18765754002EA2B3 /* DHLPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2B18765754002EA2B3 /* DHLPost.m */; };
+		C3C89B3818765DA4002EA2B3 /* api.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2F18765DA4002EA2B3 /* api.c */; };
+		C3C89B3918765DA4002EA2B3 /* dumper.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3018765DA4002EA2B3 /* dumper.c */; };
+		C3C89B3A18765DA4002EA2B3 /* emitter.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3118765DA4002EA2B3 /* emitter.c */; };
+		C3C89B3B18765DA4002EA2B3 /* loader.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3218765DA4002EA2B3 /* loader.c */; };
+		C3C89B3C18765DA4002EA2B3 /* parser.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3318765DA4002EA2B3 /* parser.c */; };
+		C3C89B3D18765DA4002EA2B3 /* reader.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3418765DA4002EA2B3 /* reader.c */; };
+		C3C89B3E18765DA4002EA2B3 /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3518765DA4002EA2B3 /* scanner.c */; };
+		C3C89B3F18765DA4002EA2B3 /* writer.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3618765DA4002EA2B3 /* writer.c */; };
+		C3C89B4218765DC4002EA2B3 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89B4118765DC4002EA2B3 /* YAML.framework */; };
+		C3C89B4318765DE5002EA2B3 /* config.h in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B4018765DAC002EA2B3 /* config.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +76,18 @@
 		C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPostTableCellView.m; sourceTree = "<group>"; };
 		C3C89B2A18765754002EA2B3 /* DHLPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLPost.h; sourceTree = "<group>"; };
 		C3C89B2B18765754002EA2B3 /* DHLPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPost.m; sourceTree = "<group>"; };
+		C3C89B2E18765D9B002EA2B3 /* yaml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = yaml.h; path = "yaml-0.1.4/include/yaml.h"; sourceTree = "<group>"; };
+		C3C89B2F18765DA4002EA2B3 /* api.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = api.c; path = "yaml-0.1.4/src/api.c"; sourceTree = "<group>"; };
+		C3C89B3018765DA4002EA2B3 /* dumper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dumper.c; path = "yaml-0.1.4/src/dumper.c"; sourceTree = "<group>"; };
+		C3C89B3118765DA4002EA2B3 /* emitter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = emitter.c; path = "yaml-0.1.4/src/emitter.c"; sourceTree = "<group>"; };
+		C3C89B3218765DA4002EA2B3 /* loader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = loader.c; path = "yaml-0.1.4/src/loader.c"; sourceTree = "<group>"; };
+		C3C89B3318765DA4002EA2B3 /* parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = parser.c; path = "yaml-0.1.4/src/parser.c"; sourceTree = "<group>"; };
+		C3C89B3418765DA4002EA2B3 /* reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = reader.c; path = "yaml-0.1.4/src/reader.c"; sourceTree = "<group>"; };
+		C3C89B3518765DA4002EA2B3 /* scanner.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = scanner.c; path = "yaml-0.1.4/src/scanner.c"; sourceTree = "<group>"; };
+		C3C89B3618765DA4002EA2B3 /* writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writer.c; path = "yaml-0.1.4/src/writer.c"; sourceTree = "<group>"; };
+		C3C89B3718765DA4002EA2B3 /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = "yaml-0.1.4/src/yaml_private.h"; sourceTree = "<group>"; };
+		C3C89B4018765DAC002EA2B3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.4/win32/config.h"; sourceTree = "<group>"; };
+		C3C89B4118765DC4002EA2B3 /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAML.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */,
+				C3C89B4218765DC4002EA2B3 /* YAML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +134,7 @@
 		C3C89AE31875D3DB002EA2B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3C89B4118765DC4002EA2B3 /* YAML.framework */,
 				C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */,
 				C3C89B061875D3DB002EA2B3 /* XCTest.framework */,
 				C3C89AE61875D3DB002EA2B3 /* Other Frameworks */,
@@ -153,6 +177,7 @@
 		C3C89AEB1875D3DB002EA2B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C3C89B2D18765D7E002EA2B3 /* yaml-0.1.4 */,
 				C3C89AEC1875D3DB002EA2B3 /* Lanyon-Info.plist */,
 				C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */,
 				C3C89AF01875D3DB002EA2B3 /* main.m */,
@@ -178,6 +203,24 @@
 				C3C89B0E1875D3DB002EA2B3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3C89B2D18765D7E002EA2B3 /* yaml-0.1.4 */ = {
+			isa = PBXGroup;
+			children = (
+				C3C89B2E18765D9B002EA2B3 /* yaml.h */,
+				C3C89B2F18765DA4002EA2B3 /* api.c */,
+				C3C89B3018765DA4002EA2B3 /* dumper.c */,
+				C3C89B3118765DA4002EA2B3 /* emitter.c */,
+				C3C89B3218765DA4002EA2B3 /* loader.c */,
+				C3C89B3318765DA4002EA2B3 /* parser.c */,
+				C3C89B3418765DA4002EA2B3 /* reader.c */,
+				C3C89B3518765DA4002EA2B3 /* scanner.c */,
+				C3C89B3618765DA4002EA2B3 /* writer.c */,
+				C3C89B3718765DA4002EA2B3 /* yaml_private.h */,
+				C3C89B4018765DAC002EA2B3 /* config.h */,
+			);
+			name = "yaml-0.1.4";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +330,15 @@
 				C3C89B201875F041002EA2B3 /* DHLWindowController.m in Sources */,
 				C3C89AF81875D3DB002EA2B3 /* DHLDocument.m in Sources */,
 				C3C89B2918765472002EA2B3 /* DHLPostTableCellView.m in Sources */,
+				C3C89B4318765DE5002EA2B3 /* config.h in Sources */,
+				C3C89B3818765DA4002EA2B3 /* api.c in Sources */,
+				C3C89B3E18765DA4002EA2B3 /* scanner.c in Sources */,
+				C3C89B3C18765DA4002EA2B3 /* parser.c in Sources */,
+				C3C89B3D18765DA4002EA2B3 /* reader.c in Sources */,
+				C3C89B3A18765DA4002EA2B3 /* emitter.c in Sources */,
+				C3C89B3918765DA4002EA2B3 /* dumper.c in Sources */,
+				C3C89B3B18765DA4002EA2B3 /* loader.c in Sources */,
+				C3C89B3F18765DA4002EA2B3 /* writer.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,11 +467,17 @@
 		C3C89B161875D3DB002EA2B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/tanner/Desktop/Lanyon,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
 				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				OTHER_CFLAGS = "-DHAVE_CONFIG_H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,11 +486,17 @@
 		C3C89B171875D3DB002EA2B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/tanner/Desktop/Lanyon,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
 				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				OTHER_CFLAGS = "-DHAVE_CONFIG_H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
