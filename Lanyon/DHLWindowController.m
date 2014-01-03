@@ -9,6 +9,8 @@
 #import "DHLWindowController.h"
 
 #import "DHLDocument.h"
+#import "DHLPost.h"
+
 #import "DHLPostTableCellView.h"
 
 @interface DHLWindowController ()
@@ -116,17 +118,17 @@
 #pragma mark Table View Delegate
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    NSString *post = [self postForRow:row];
+    DHLPost *post = [self postForRow:row];
     
     DHLPostTableCellView *cellView = [tableView makeViewWithIdentifier:@"PostCell" owner:self];
     
-    cellView.title.stringValue = post;
-    cellView.contents.stringValue = post;
+    cellView.title.stringValue = post.path;
+    cellView.contents.stringValue = post.contents;
     
     return cellView;
 }
 
-- (NSString *)postForRow:(NSInteger)row {
+- (DHLPost *)postForRow:(NSInteger)row {
     DHLDocument *document = (DHLDocument *)self.document;
     DHLJekyll *jekyll = [document jekyll];
     

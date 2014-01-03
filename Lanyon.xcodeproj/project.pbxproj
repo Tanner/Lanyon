@@ -23,6 +23,7 @@
 		C3C89B211875F041002EA2B3 /* DHLWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */; };
 		C3C89B2618762687002EA2B3 /* DHLJekyll.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2518762687002EA2B3 /* DHLJekyll.m */; };
 		C3C89B2918765472002EA2B3 /* DHLPostTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */; };
+		C3C89B2C18765754002EA2B3 /* DHLPost.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B2B18765754002EA2B3 /* DHLPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		C3C89B2518762687002EA2B3 /* DHLJekyll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLJekyll.m; sourceTree = "<group>"; };
 		C3C89B2718765472002EA2B3 /* DHLPostTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLPostTableCellView.h; sourceTree = "<group>"; };
 		C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPostTableCellView.m; sourceTree = "<group>"; };
+		C3C89B2A18765754002EA2B3 /* DHLPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLPost.h; sourceTree = "<group>"; };
+		C3C89B2B18765754002EA2B3 /* DHLPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPost.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */,
 				C3C89B2418762687002EA2B3 /* DHLJekyll.h */,
 				C3C89B2518762687002EA2B3 /* DHLJekyll.m */,
+				C3C89B2A18765754002EA2B3 /* DHLPost.h */,
+				C3C89B2B18765754002EA2B3 /* DHLPost.m */,
 				C3C89AFC1875D3DB002EA2B3 /* MainMenu.xib */,
 				C3C89AFF1875D3DB002EA2B3 /* Images.xcassets */,
 				C3C89AEB1875D3DB002EA2B3 /* Supporting Files */,
@@ -276,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C89B2C18765754002EA2B3 /* DHLPost.m in Sources */,
 				C3C89AF11875D3DB002EA2B3 /* main.m in Sources */,
 				C3C89B2618762687002EA2B3 /* DHLJekyll.m in Sources */,
 				C3C89B201875F041002EA2B3 /* DHLWindowController.m in Sources */,

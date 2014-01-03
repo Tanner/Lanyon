@@ -8,6 +8,8 @@
 
 #import "DHLJekyll.h"
 
+#import "DHLPost.h"
+
 @implementation DHLJekyll
 
 @synthesize path, title;
@@ -23,10 +25,18 @@
         if ([fileManager fileExistsAtPath:postsDirectory isDirectory:&directory]) {
             NSError *error;
             
-            posts = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:[NSURL URLWithString:postsDirectory]
+            NSArray *postFiles = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:[NSURL URLWithString:postsDirectory]
                        includingPropertiesForKeys:@[]
                                           options:NSDirectoryEnumerationSkipsHiddenFiles
                                             error:&error];
+            
+            posts = [[NSMutableArray alloc] init];
+            
+            [postFiles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                NSString *postPath = (NSString *) obj;
+                
+                [posts addObject:[[DHLPost alloc] initWithPath:postPath]];
+            }];
         }
     }
 }
