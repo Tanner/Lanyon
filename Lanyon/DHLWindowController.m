@@ -190,7 +190,6 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
     NSToolbarItem *toolbarItem;
     NSButton *button = [[NSButton alloc] init];
-    NSSize itemSize;
     
     [button setBezelStyle:NSTexturedRoundedBezelStyle];
     
@@ -203,30 +202,64 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
         [toolbarItem setTarget:self];
         
         [button setImage:[NSImage imageNamed:NSImageNameAddTemplate]];
-        itemSize = NSMakeSize(40, 35);
+        
+        [toolbarItem setMaxSize:NSMakeSize(40, 35)];
+        [toolbarItem setMinSize:NSMakeSize(40, 35)];
     } else if ([itemIdentifier isEqualToString:DHLPreviewToolbarItemIdentifier]) {
         toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
         
-        [toolbarItem setLabel:@"Preview"];
+        [toolbarItem setLabel:[self titleForPreviewButton]];
         [toolbarItem setPaletteLabel:[toolbarItem label]];
         [toolbarItem setToolTip:@"Preview your site"];
         
-        [button setButtonType:NSToggleButton];
-        [button setState:NSOffState];
+        [button setTitle:[self titleForPreviewButton]];
+        [button sizeToFit];
         
-        [button setTarget:[self document]];
-        [button setAction:@selector(previewJekyll)];
-        [button setImage:[NSImage imageNamed:NSImageNameGoRightTemplate]];
-        [button setAlternateImage:[NSImage imageNamed:NSImageNameStopProgressTemplate]];
-        itemSize = NSMakeSize(40, 35);
+        [toolbarItem setMaxSize:[button frame].size];
+        [toolbarItem setMinSize:[button frame].size];
+        
+        [button setTarget:self];
+        [button setAction:@selector(previewButtonPushed)];
     }
     
     [toolbarItem setView:button];
     [toolbarItem setMenuFormRepresentation:[[NSMenuItem alloc] initWithTitle:[toolbarItem label] action:nil keyEquivalent:@""]];
-    [toolbarItem setMaxSize:itemSize];
-    [toolbarItem setMinSize:itemSize];
     
     return toolbarItem;
+}
+
+- (void)previewButtonPushed {
+    __block NSToolbarItem *buttonToolbarItem;
+    
+    [[self document] previewJekyll];
+    
+    [[[[self window] toolbar] items] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSToolbarItem *item = (NSToolbarItem *) obj;
+        
+        if ([[item itemIdentifier] isEqualToString:DHLPreviewToolbarItemIdentifier]) {
+            buttonToolbarItem = item;
+            
+            *stop = YES;
+        }
+    }];
+    
+    NSButton *button = (NSButton *) [buttonToolbarItem view];
+    
+    [button setTitle:[self titleForPreviewButton]];
+    [button sizeToFit];
+    
+    NSSize size = [button frame].size;
+    
+    [buttonToolbarItem setMaxSize:size];
+    [buttonToolbarItem setMinSize:size];
+}
+
+- (NSString *)titleForPreviewButton {
+    if ([[[self document] jekyll] isPreviewing]) {
+        return @"Stop Previewing";
+    } else {
+        return @"Preview";
+    }
 }
 
 @end
