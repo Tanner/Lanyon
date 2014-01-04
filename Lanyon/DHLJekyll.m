@@ -43,15 +43,26 @@
                                           options:NSDirectoryEnumerationSkipsHiddenFiles
                                             error:&error];
             
-            posts = [[NSMutableArray alloc] init];
+            NSMutableArray *tempPosts = [[NSMutableArray alloc] init];
             
             [postFiles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSURL *postPath = (NSURL *) obj;
                 
-                [posts addObject:[[DHLPost alloc] initWithPath:postPath]];
+                [tempPosts addObject:[[DHLPost alloc] initWithPath:postPath]];
             }];
+            
+            self.posts = [NSArray arrayWithArray:tempPosts];
         }
     }
+}
+
+- (NSArray *)posts {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self loadPosts];
+    });
+    
+    return posts;
 }
 
 #pragma mark -

@@ -18,6 +18,9 @@
 
 @property (nonatomic, retain) NSDictionary *parsedYAML;
 
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSDate *date;
+
 - (id)initWithPath:(NSURL *)aPath;
 
 @end

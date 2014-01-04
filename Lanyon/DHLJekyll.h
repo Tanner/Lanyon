@@ -13,13 +13,11 @@
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *title;
 
-@property (nonatomic, retain) NSMutableArray *posts;
+@property (nonatomic, retain) NSArray *posts;
 
 @property (nonatomic, retain) NSTask *previewTask;
 
 @property (nonatomic, retain) dispatch_queue_t jekyllQueue;
-
-- (void)loadPosts;
 
 - (void)startPreviewWithBlock:(void (^)(BOOL running))block;
 - (void)stopPreview;

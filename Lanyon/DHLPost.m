@@ -14,6 +14,7 @@
 
 @synthesize path, contents;
 @synthesize yaml, text, parsedYAML;
+@synthesize title, date;
 
 - (id)initWithPath:(NSURL *)aPath {
     if (self = [super init]) {
@@ -38,6 +39,9 @@
         parsedYAML = [[YAMLSerialization objectsWithYAMLString:yaml
                                                       options:kYAMLReadOptionStringScalars
                                                         error:nil] objectAtIndex:0];
+        
+        date = [NSDate dateWithNaturalLanguageString:[parsedYAML objectForKey:@"date"]];
+        title = [parsedYAML objectForKey:@"title"];
     }
     
     return self;

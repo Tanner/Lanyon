@@ -34,6 +34,8 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     [postsTableView setTarget:self];
     [postsTableView setDoubleAction:@selector(tableViewClicked)];
     
+    [postsTableView setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
+    
     NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:@"DocumentToolbar"];
     
     [toolbar setAllowsUserCustomization:YES];
@@ -58,8 +60,6 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     NSUInteger numberOfPosts = 0;
     
     if (jekyll) {
-        [jekyll loadPosts];
-
         numberOfPosts = [[jekyll posts] count];
     }
     
@@ -133,13 +133,16 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     DHLDocument *document = (DHLDocument *)self.document;
     DHLJekyll *jekyll = [document jekyll];
-    NSArray *posts = [jekyll posts];
-    
-    if (!posts) {
-        [jekyll loadPosts];
-    }
     
     return [[jekyll posts] count];
+}
+
+- (void)tableView:(NSTableView *)tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors {
+    DHLJekyll *jekyll = [[self document] jekyll];
+    
+    jekyll.posts = [[jekyll posts] sortedArrayUsingDescriptors:[tableView sortDescriptors]];
+    
+    [tableView reloadData];
 }
 
 #pragma mark -
@@ -150,9 +153,13 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     
     DHLPostTableCellView *cellView = [tableView makeViewWithIdentifier:@"PostCell" owner:self];
     
-    cellView.title.stringValue = [post.parsedYAML objectForKey:@"title"];
-    cellView.contents.stringValue = post.text;
-    cellView.date.stringValue = [post.parsedYAML objectForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    cellView.title.stringValue = [post title];
+    cellView.contents.stringValue = [post text];
+    cellView.date.stringValue = [dateFormatter stringFromDate:[post date]];
     
     return cellView;
 }
