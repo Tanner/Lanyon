@@ -65,6 +65,10 @@
     return YES;
 }
 
+- (void)close {
+    [jekyll stopPreview];
+}
+
 - (void)previewJekyll {
     if ([jekyll isPreviewing]) {
         [jekyll stopPreview];
