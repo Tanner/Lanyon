@@ -25,4 +25,6 @@
 - (IBAction)creationSheetCancel:(id)sender;
 - (IBAction)creationSheetCreate:(id)sender;
 
+- (void)failedToRun;
+
 @end

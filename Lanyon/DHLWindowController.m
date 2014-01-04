@@ -229,9 +229,13 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 }
 
 - (void)previewButtonPushed {
-    __block NSToolbarItem *buttonToolbarItem;
-    
     [[self document] previewJekyll];
+    
+    [self updatePreviewButton];
+}
+
+- (void)updatePreviewButton {
+    __block NSToolbarItem *buttonToolbarItem;
     
     [[[[self window] toolbar] items] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSToolbarItem *item = (NSToolbarItem *) obj;
@@ -260,6 +264,19 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     } else {
         return @"Preview";
     }
+}
+
+- (void)failedToRun {
+    [self updatePreviewButton];
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:@"Site preview failed."];
+    [alert setInformativeText:@"Jekyll was unable to generate and show you the preview."];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    
+    [alert beginSheetModalForWindow:[self window] completionHandler:nil];
 }
 
 @end

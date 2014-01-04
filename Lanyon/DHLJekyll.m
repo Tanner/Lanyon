@@ -57,7 +57,7 @@
 #pragma mark -
 #pragma mark Preview - `jekyll serve`
 
-- (void)startPreview {
+- (void)startPreviewWithBlock:(void (^)(BOOL running))block {
     if (previewTask) {
         if ([previewTask isRunning]) {
             return;
@@ -73,26 +73,33 @@
 
     [previewTask setArguments:@[@"-c", @"jekyll serve --watch"]];
     
-    NSPipe *pipe = [NSPipe pipe];
-    NSFileHandle *fileHandle = [pipe fileHandleForReading];
-
-    [previewTask setStandardOutput:pipe];
+    NSPipe *standardPipe = [NSPipe pipe];
+    NSFileHandle *standardFileHandle = [standardPipe fileHandleForReading];
+    
+    [previewTask setStandardOutput:standardPipe];
     [previewTask launch];
     
     dispatch_async(jekyllQueue, ^{
         NSData *data = nil;
         NSMutableData *taskData = [NSMutableData data];
         
-        while ((data = [fileHandle availableData]) && [data length]) {
+        BOOL running = NO;
+        
+        while ((data = [standardFileHandle availableData]) && [data length]) {
             [taskData appendData:data];
             
             NSString *output = [[NSString alloc] initWithData:taskData encoding:NSUTF8StringEncoding];
             
             if ([output rangeOfString:@"Server running"].location != NSNotFound) {
-                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
+                running = YES;
+                
                 break;
             }
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(running);
+        });
     });
 }
 

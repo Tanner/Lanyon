@@ -69,7 +69,13 @@
     if ([jekyll isPreviewing]) {
         [jekyll stopPreview];
     } else {
-        [jekyll startPreview];
+        [jekyll startPreviewWithBlock:^(BOOL running) {
+            if (running) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
+            } else {
+                [[[self windowControllers] objectAtIndex:0] failedToRun];
+            }
+        }];
     }
 }
 

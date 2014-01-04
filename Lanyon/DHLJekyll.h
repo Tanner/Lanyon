@@ -21,7 +21,7 @@
 
 - (void)loadPosts;
 
-- (void)startPreview;
+- (void)startPreviewWithBlock:(void (^)(BOOL running))block;
 - (void)stopPreview;
 - (BOOL)isPreviewing;
 
