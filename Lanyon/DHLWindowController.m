@@ -165,17 +165,62 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 }
 
 - (void)tableViewClicked {
-    NSInteger row = [postsTableView clickedRow];
-    DHLPost *post = [self postForRow:row];
+    [self openEditorForSelectedPost];
+}
+
+- (void)openEditorForSelectedPost {
+    [[self postForRow:[postsTableView clickedRow]] openEditor];
+}
+
+- (void)openFinderForSelectedPost {
+    [[self postForRow:[postsTableView clickedRow]] showInFinder];
+}
+
+- (void)deleteSelectedPost {
+    NSError *error;
     
-    [[NSWorkspace sharedWorkspace] openURL:[post path]];
+    [[self postForRow:[postsTableView clickedRow]] deletePost:&error];
+    
+    if (error) {
+        NSAlert *alert = [[NSAlert alloc] init];
+        
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:@"Unable to delete post."];
+        [alert setInformativeText:@"Lanyon was unable to delete the selected post."];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        [alert beginSheetModalForWindow:[self window] completionHandler:nil];
+    }
 }
 
 - (DHLPost *)postForRow:(NSInteger)row {
+    if (row < 0) {
+        return nil;
+    }
+    
     DHLDocument *document = (DHLDocument *)self.document;
     DHLJekyll *jekyll = [document jekyll];
     
     return [[jekyll posts] objectAtIndex:row];
+}
+
+#pragma mark -
+#pragma mark Table View Context Menu
+
+- (IBAction)contextMenuOpen:(id)sender {
+    [self openEditorForSelectedPost];
+}
+
+- (IBAction)contextMenuViewBrowser:(id)sender {
+    // TODO: Implement me!
+}
+
+- (IBAction)contextMenuShowFinder:(id)sender {
+    [self openFinderForSelectedPost];
+}
+
+- (IBAction)contextMenuDelete:(id)sender {
+    [self deleteSelectedPost];
 }
 
 #pragma mark -

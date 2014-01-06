@@ -12,6 +12,34 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <menu id="9C9-c5-rMC">
+            <items>
+                <menuItem title="Edit" id="Yki-1I-aTp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="contextMenuOpen:" target="-2" id="Zdu-Gz-Pqk"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="View in Browser" id="zH4-Ni-51A">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="contextMenuViewBrowser:" target="-2" id="kDY-Rc-dPr"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Show in Finder" id="dPa-5E-XdH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="contextMenuShowFinder:" target="-2" id="X6L-mD-g5k"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Delete Post" id="eOQ-LC-oBh">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="contextMenuDelete:" target="-2" id="CJI-o5-T1r"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
         <customObject id="-3" userLabel="Application"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
@@ -108,6 +136,7 @@
                                     <connections>
                                         <outlet property="dataSource" destination="-2" id="Vsc-O1-QHc"/>
                                         <outlet property="delegate" destination="-2" id="3a0-xq-pxs"/>
+                                        <outlet property="menu" destination="9C9-c5-rMC" id="cb4-sC-jK0"/>
                                     </connections>
                                 </tableView>
                             </subviews>

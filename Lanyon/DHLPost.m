@@ -47,4 +47,16 @@
     return self;
 }
 
+- (void)openEditor {
+    [[NSWorkspace sharedWorkspace] openURL:path];
+}
+
+- (void)showInFinder {
+    [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[path]];
+}
+
+- (void)deletePost:(NSError **)error {
+    [[NSFileManager defaultManager] removeItemAtURL:path error:error];
+}
+
 @end

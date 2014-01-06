@@ -23,4 +23,8 @@
 
 - (id)initWithPath:(NSURL *)aPath;
 
+- (void)openEditor;
+- (void)showInFinder;
+- (void)deletePost:(NSError **)error;
+
 @end

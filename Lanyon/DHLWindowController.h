@@ -25,6 +25,11 @@
 - (IBAction)creationSheetCancel:(id)sender;
 - (IBAction)creationSheetCreate:(id)sender;
 
+- (IBAction)contextMenuOpen:(id)sender;
+- (IBAction)contextMenuViewBrowser:(id)sender;
+- (IBAction)contextMenuShowFinder:(id)sender;
+- (IBAction)contextMenuDelete:(id)sender;
+
 - (void)failedToRun;
 
 @end
