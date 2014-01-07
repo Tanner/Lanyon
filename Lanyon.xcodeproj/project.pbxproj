@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31C18B7187C80E400E57635 /* YAML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
+		C324DB0E187B9F920006E885 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
 		C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
 		C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */; };
 		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
@@ -32,7 +34,6 @@
 		C3C89B3D18765DA4002EA2B3 /* reader.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3418765DA4002EA2B3 /* reader.c */; };
 		C3C89B3E18765DA4002EA2B3 /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3518765DA4002EA2B3 /* scanner.c */; };
 		C3C89B3F18765DA4002EA2B3 /* writer.c in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B3618765DA4002EA2B3 /* writer.c */; };
-		C3C89B4218765DC4002EA2B3 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89B4118765DC4002EA2B3 /* YAML.framework */; };
 		C3C89B4318765DE5002EA2B3 /* config.h in Sources */ = {isa = PBXBuildFile; fileRef = C3C89B4018765DAC002EA2B3 /* config.h */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C3890E25187C80620047592E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C31C18B7187C80E400E57635 /* YAML.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C324DB0D187B9F920006E885 /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAML.framework; path = Lanyon/Frameworks/YAML.framework; sourceTree = "<group>"; };
 		C3C89AE11875D3DB002EA2B3 /* Lanyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lanyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3C89AE71875D3DB002EA2B3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,7 +102,6 @@
 		C3C89B3618765DA4002EA2B3 /* writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writer.c; path = "yaml-0.1.4/src/writer.c"; sourceTree = "<group>"; };
 		C3C89B3718765DA4002EA2B3 /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = "yaml-0.1.4/src/yaml_private.h"; sourceTree = "<group>"; };
 		C3C89B4018765DAC002EA2B3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.4/win32/config.h"; sourceTree = "<group>"; };
-		C3C89B4118765DC4002EA2B3 /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAML.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */,
-				C3C89B4218765DC4002EA2B3 /* YAML.framework in Frameworks */,
+				C324DB0E187B9F920006E885 /* YAML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +148,7 @@
 		C3C89AE31875D3DB002EA2B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C3C89B4118765DC4002EA2B3 /* YAML.framework */,
+				C324DB0D187B9F920006E885 /* YAML.framework */,
 				C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */,
 				C3C89B061875D3DB002EA2B3 /* XCTest.framework */,
 				C3C89AE61875D3DB002EA2B3 /* Other Frameworks */,
@@ -233,6 +247,7 @@
 				C3C89ADD1875D3DB002EA2B3 /* Sources */,
 				C3C89ADE1875D3DB002EA2B3 /* Frameworks */,
 				C3C89ADF1875D3DB002EA2B3 /* Resources */,
+				C3890E25187C80620047592E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -473,10 +488,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tanner/Desktop/Lanyon,
+					/Users/tanner/Desktop/Lanyon/Frameworks,
+					/Users/tanner/Desktop/Lanyon/Lanyon/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
 				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				OTHER_CFLAGS = "-DHAVE_CONFIG_H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -492,10 +510,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tanner/Desktop/Lanyon,
+					/Users/tanner/Desktop/Lanyon/Frameworks,
+					/Users/tanner/Desktop/Lanyon/Lanyon/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lanyon/Lanyon-Prefix.pch";
 				INFOPLIST_FILE = "Lanyon/Lanyon-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				OTHER_CFLAGS = "-DHAVE_CONFIG_H";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -561,6 +582,7 @@
 				C3C89B171875D3DB002EA2B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3C89B181875D3DB002EA2B3 /* Build configuration list for PBXNativeTarget "LanyonTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +591,7 @@
 				C3C89B1A1875D3DB002EA2B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
