@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C31C18B7187C80E400E57635 /* YAML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
-		C324DB0E187B9F920006E885 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
+		C31C18B8187C830C00E57635 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
 		C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
 		C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */; };
 		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
@@ -110,7 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */,
-				C324DB0E187B9F920006E885 /* YAML.framework in Frameworks */,
+				C31C18B8187C830C00E57635 /* YAML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
