@@ -48,6 +48,8 @@
 }
 
 - (void)showWindows {
+    [self makeWindowControllers];
+    
     [[[self windowControllers] objectAtIndex:0] setCreation:jekyll == nil];
     
     [super showWindows];
