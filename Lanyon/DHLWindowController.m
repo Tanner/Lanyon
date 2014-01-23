@@ -20,6 +20,7 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 
 @synthesize postsTableView;
 @synthesize creation, creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
+@synthesize previewWindowController;
 @synthesize postCount;
 
 - (id)init {
@@ -125,6 +126,17 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     } else {
         [creationSheetCreateButton setEnabled:NO];
     }
+}
+
+#pragma mark -
+#pragma mark Preview Sheet
+
+- (void)showPreviewSheet {
+    if (!previewWindowController) {
+        previewWindowController = [[DHLPreviewWindowController alloc] initWithWindowNibName:@"DHLPreviewSheet"];        
+    }
+    
+    [[self window] beginSheet:previewWindowController.window completionHandler:nil];
 }
 
 #pragma mark -
@@ -260,11 +272,12 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     } else if ([itemIdentifier isEqualToString:DHLPreviewToolbarItemIdentifier]) {
         toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
         
-        [toolbarItem setLabel:[self titleForPreviewButton]];
+        [toolbarItem setLabel:@"Preview"];
         [toolbarItem setPaletteLabel:[toolbarItem label]];
         [toolbarItem setToolTip:@"Preview your site"];
         
-        [button setTitle:[self titleForPreviewButton]];
+        [button setButtonType:NSToggleButton];
+        [button setTitle:@"Preview"];
         [button sizeToFit];
         
         [toolbarItem setMaxSize:[button frame].size];
@@ -282,44 +295,26 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 
 - (void)previewButtonPushed {
     [[self document] previewJekyll];
-    
-    [self updatePreviewButton];
 }
 
-- (void)updatePreviewButton {
-    __block NSToolbarItem *buttonToolbarItem;
-    
-    [[[[self window] toolbar] items] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSToolbarItem *item = (NSToolbarItem *) obj;
-        
-        if ([[item itemIdentifier] isEqualToString:DHLPreviewToolbarItemIdentifier]) {
-            buttonToolbarItem = item;
-            
-            *stop = YES;
-        }
-    }];
-    
-    NSButton *button = (NSButton *) [buttonToolbarItem view];
-    
-    [button setTitle:[self titleForPreviewButton]];
-    [button sizeToFit];
-    
-    NSSize size = [button frame].size;
-    
-    [buttonToolbarItem setMaxSize:size];
-    [buttonToolbarItem setMinSize:size];
+#pragma mark -
+#pragma mark Preview Methods
+- (void)previewStopped {
+    [[self window] endSheet:previewWindowController.window];
+    [previewWindowController.window orderOut:self];
 }
 
-- (NSString *)titleForPreviewButton {
-    if ([[[self document] jekyll] isPreviewing]) {
-        return @"Stop Previewing";
-    } else {
-        return @"Preview";
-    }
+- (void)previewStarting {
+    [self showPreviewSheet];
 }
 
-- (void)failedToRun {
-    [self updatePreviewButton];
+- (void)previewStarted {
+    [[self window] endSheet:previewWindowController.window];
+    [previewWindowController.window orderOut:self];
+}
+
+- (void)previewFailed {
+    [self previewStopped];
     
     NSAlert *alert = [[NSAlert alloc] init];
     

@@ -50,7 +50,7 @@
 - (void)showWindows {
     [self makeWindowControllers];
     
-    [[[self windowControllers] objectAtIndex:0] setCreation:jekyll == nil];
+    [[self windowController] setCreation:jekyll == nil];
     
     [super showWindows];
 }
@@ -71,15 +71,27 @@
     [jekyll stopPreview];
 }
 
+- (DHLWindowController *)windowController {
+    [self makeWindowControllers];
+    
+    return [[self windowControllers] objectAtIndex:0];
+}
+
 - (void)previewJekyll {
     if ([jekyll isPreviewing]) {
+        [[self windowController] previewStopped];
+        
         [jekyll stopPreview];
     } else {
+        [[self windowController] previewStarting];
+        
         [jekyll startPreviewWithBlock:^(BOOL running) {
             if (running) {
+                [[self windowController] previewStarted];
+                
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://0.0.0.0:4000"]];
             } else {
-                [[[self windowControllers] objectAtIndex:0] failedToRun];
+                [[self windowController] previewFailed];
             }
         }];
     }

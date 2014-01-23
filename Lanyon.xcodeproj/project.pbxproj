@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30D132718830EFD0016B647 /* DHLPreviewSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30D132618830EFD0016B647 /* DHLPreviewSheet.xib */; };
 		C31C18B7187C80E400E57635 /* YAML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
 		C31C18B8187C830C00E57635 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
+		C32FD9F31890AD09009FD1D4 /* DHLPreviewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FD9F21890AD09009FD1D4 /* DHLPreviewWindowController.m */; };
 		C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
 		C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */; };
 		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
@@ -61,7 +63,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C30D132618830EFD0016B647 /* DHLPreviewSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHLPreviewSheet.xib; sourceTree = "<group>"; };
 		C324DB0D187B9F920006E885 /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAML.framework; path = Lanyon/Frameworks/YAML.framework; sourceTree = "<group>"; };
+		C32FD9F11890AD09009FD1D4 /* DHLPreviewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLPreviewWindowController.h; sourceTree = "<group>"; };
+		C32FD9F21890AD09009FD1D4 /* DHLPreviewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPreviewWindowController.m; sourceTree = "<group>"; };
 		C3C89AE11875D3DB002EA2B3 /* Lanyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lanyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3C89AE71875D3DB002EA2B3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -177,6 +182,9 @@
 				C3C89B2718765472002EA2B3 /* DHLPostTableCellView.h */,
 				C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */,
 				C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */,
+				C32FD9F11890AD09009FD1D4 /* DHLPreviewWindowController.h */,
+				C32FD9F21890AD09009FD1D4 /* DHLPreviewWindowController.m */,
+				C30D132618830EFD0016B647 /* DHLPreviewSheet.xib */,
 				C3C89B2418762687002EA2B3 /* DHLJekyll.h */,
 				C3C89B2518762687002EA2B3 /* DHLJekyll.m */,
 				C3C89B2A18765754002EA2B3 /* DHLPost.h */,
@@ -317,6 +325,7 @@
 			files = (
 				C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */,
 				C3C89B211875F041002EA2B3 /* DHLWindowController.xib in Resources */,
+				C30D132718830EFD0016B647 /* DHLPreviewSheet.xib in Resources */,
 				C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */,
 				C3C89B1C1875E1D5002EA2B3 /* DHLCreationSheet.xib in Resources */,
 				C3C89AF51875D3DB002EA2B3 /* Credits.rtf in Resources */,
@@ -351,6 +360,7 @@
 				C3C89B3C18765DA4002EA2B3 /* parser.c in Sources */,
 				C3C89B3D18765DA4002EA2B3 /* reader.c in Sources */,
 				C3C89B3A18765DA4002EA2B3 /* emitter.c in Sources */,
+				C32FD9F31890AD09009FD1D4 /* DHLPreviewWindowController.m in Sources */,
 				C3C89B3918765DA4002EA2B3 /* dumper.c in Sources */,
 				C3C89B3B18765DA4002EA2B3 /* loader.c in Sources */,
 				C3C89B3F18765DA4002EA2B3 /* writer.c in Sources */,

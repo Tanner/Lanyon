@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "DHLPreviewWindowController.h"
+
 @interface DHLWindowController : NSWindowController <NSTextFieldDelegate, NSTableViewDataSource, NSTableViewDelegate, NSToolbarDelegate>
 
 @property (assign) BOOL creation;
@@ -16,6 +18,8 @@
 @property (assign) IBOutlet NSTextField *creationSheetPath;
 @property (assign) IBOutlet NSTextField *creationSheetTitle;
 @property (assign) IBOutlet NSButton *creationSheetCreateButton;
+
+@property (nonatomic, retain) DHLPreviewWindowController *previewWindowController;
 
 @property (assign) IBOutlet NSTableView *postsTableView;
 
@@ -30,6 +34,9 @@
 - (IBAction)contextMenuShowFinder:(id)sender;
 - (IBAction)contextMenuDelete:(id)sender;
 
-- (void)failedToRun;
+- (void)previewStopped;
+- (void)previewStarting;
+- (void)previewStarted;
+- (void)previewFailed;
 
 @end
