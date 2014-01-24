@@ -36,16 +36,6 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     [postsTableView setDoubleAction:@selector(tableViewClicked)];
     
     [postsTableView setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
-    
-    NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:@"DocumentToolbar"];
-    
-    [toolbar setAllowsUserCustomization:YES];
-    [toolbar setAutosavesConfiguration:YES];
-    [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
-    
-    [toolbar setDelegate:self];
-    
-    [[self window] setToolbar:toolbar];
 }
 
 - (void)windowDidLoad
@@ -65,6 +55,20 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     }
     
     postCount.stringValue = [NSString stringWithFormat:@"%ld Posts", (unsigned long)numberOfPosts];
+    
+    [self addToolbar];
+}
+
+- (void)addToolbar {
+    NSToolbar *toolbar = [[NSToolbar alloc] initWithIdentifier:@"DocumentToolbar"];
+    
+    [toolbar setAllowsUserCustomization:YES];
+    [toolbar setAutosavesConfiguration:YES];
+    [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
+    
+    [toolbar setDelegate:self];
+    
+    [[self window] setToolbar:toolbar];
 }
 
 #pragma mark -
@@ -79,7 +83,7 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
         if (returnCode == NSModalResponseOK) {
             DHLDocument *document = (DHLDocument *)self.document;
             DHLJekyll *jekyll = [[DHLJekyll alloc] initWithPath:[creationSheetPath stringValue]];
-                        
+            
             [document setJekyll:jekyll];
             [postsTableView reloadData];
         } else {
