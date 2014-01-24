@@ -16,6 +16,11 @@
 @synthesize posts;
 @synthesize previewTask, jekyllQueue;
 
+const NSString *rubyPath = @"/usr/local/Cellar/ruby/2.0.0-p247/bin";
+const NSString *jekyllPath = @"/usr/local/Cellar/ruby/2.0.0-p247/bin";
+
+const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"en_US.UTF-8\"";
+
 - (id)init {
     if (self = [super init]) {
         jekyllQueue = dispatch_queue_create("me.tannersmith.lanyon.jekyll", NULL);
@@ -82,8 +87,11 @@
     [previewTask setLaunchPath:@"/bin/bash"];
     [previewTask setCurrentDirectoryPath:path];
 
-    [previewTask setArguments:@[@"-c", @"jekyll serve --watch"]];
+    NSString *exportPath = [NSString stringWithFormat:@"export PATH=%@:%@:$PATH", rubyPath, jekyllPath];
+    NSString *command = [NSString stringWithFormat:@"%@; %@; %@", exportPath, exportEncoding, @"jekyll serve --watch --trace"];
     
+    [previewTask setArguments:@[@"-c", command]];
+        
     NSPipe *standardPipe = [NSPipe pipe];
     NSFileHandle *standardFileHandle = [standardPipe fileHandleForReading];
     
