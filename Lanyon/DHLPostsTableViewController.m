@@ -95,8 +95,7 @@
         [alert setInformativeText:@"Lanyon was unable to delete the selected post."];
         [alert setAlertStyle:NSWarningAlertStyle];
         
-        // TODO: Fix this
-//        [alert beginSheetModalForWindow:[self window] completionHandler:nil];
+        [alert beginSheetModalForWindow:[[self view] window] completionHandler:nil];
     }
 }
 
