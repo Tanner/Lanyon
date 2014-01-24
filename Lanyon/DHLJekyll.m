@@ -13,7 +13,7 @@
 @implementation DHLJekyll
 
 @synthesize path, title;
-@synthesize posts;
+@synthesize config, posts;
 @synthesize previewTask, jekyllQueue;
 
 const NSString *rubyPath = @"/usr/local/Cellar/ruby/2.0.0-p247/bin";
@@ -21,9 +21,12 @@ const NSString *jekyllPath = @"/usr/local/Cellar/ruby/2.0.0-p247/bin";
 
 const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"en_US.UTF-8\"";
 
-- (id)init {
+- (id)initWithPath:(NSString *)aPath {
     if (self = [super init]) {
         jekyllQueue = dispatch_queue_create("me.tannersmith.lanyon.jekyll", NULL);
+        
+        path = aPath;
+        config = [[DHLJekyllConfig alloc] initWithPath:path];
     }
     
     return self;
@@ -68,6 +71,18 @@ const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"
     });
     
     return posts;
+}
+
+- (DHLJekyllConfig *)config {
+    if (config == nil) {
+        config = [[DHLJekyllConfig alloc] initWithPath:path];
+    }
+    
+    return config;
+}
+
+- (NSString *)title {
+    return [[[self config] contents] objectForKey:@"name"];
 }
 
 #pragma mark -

@@ -19,7 +19,7 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 @implementation DHLWindowController
 
 @synthesize postsTableView;
-@synthesize creation, creationSheet, creationSheetPath, creationSheetTitle, creationSheetCreateButton;
+@synthesize creation, creationSheet, creationSheetPath, creationSheetCreateButton;
 @synthesize previewWindowController;
 @synthesize postCount;
 
@@ -75,16 +75,11 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
         [[NSBundle mainBundle] loadNibNamed:@"DHLCreationSheet" owner:self topLevelObjects:nil];
     }
     
-    [creationSheetTitle setDelegate:self];
-    
     [[self window] beginSheet:creationSheet completionHandler:^(NSModalResponse returnCode) {
         if (returnCode == NSModalResponseOK) {
             DHLDocument *document = (DHLDocument *)self.document;
-            DHLJekyll *jekyll = [[DHLJekyll alloc] init];
-            
-            [jekyll setPath:[creationSheetPath stringValue]];
-            [jekyll setTitle:[creationSheetTitle stringValue]];
-            
+            DHLJekyll *jekyll = [[DHLJekyll alloc] initWithPath:[creationSheetPath stringValue]];
+                        
             [document setJekyll:jekyll];
             [postsTableView reloadData];
         } else {
@@ -124,7 +119,7 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 }
 
 - (void)checkValidCreation {
-    if ([[creationSheetPath stringValue] length] > 0 && [[creationSheetTitle stringValue] length] > 0) {
+    if ([[creationSheetPath stringValue] length] > 0) {
         [creationSheetCreateButton setEnabled:YES];
     } else {
         [creationSheetCreateButton setEnabled:NO];

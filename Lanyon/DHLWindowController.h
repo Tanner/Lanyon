@@ -16,7 +16,6 @@
 
 @property (assign) IBOutlet NSWindow *creationSheet;
 @property (assign) IBOutlet NSTextField *creationSheetPath;
-@property (assign) IBOutlet NSTextField *creationSheetTitle;
 @property (assign) IBOutlet NSButton *creationSheetCreateButton;
 
 @property (nonatomic, retain) DHLPreviewWindowController *previewWindowController;
