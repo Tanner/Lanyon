@@ -18,10 +18,11 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 
 @implementation DHLWindowController
 
-@synthesize postsTableView;
 @synthesize creation, creationSheet, creationSheetPath, creationSheetCreateButton;
-@synthesize previewWindowController;
+@synthesize postsTableViewController, previewWindowController;
 @synthesize postCount;
+
+@synthesize postsView;
 
 - (id)init {
     if (self = [super initWithWindowNibName:@"DHLWindowController"]) {
@@ -29,13 +30,6 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     }
     
     return self;
-}
-
-- (void)awakeFromNib {
-    [postsTableView setTarget:self];
-    [postsTableView setDoubleAction:@selector(tableViewClicked)];
-    
-    [postsTableView setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
 }
 
 - (void)windowDidLoad
@@ -57,6 +51,22 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     postCount.stringValue = [NSString stringWithFormat:@"%ld Posts", (unsigned long)numberOfPosts];
     
     [self addToolbar];
+    
+    postsTableViewController.document = [self document];
+    
+    NSDictionary *viewsDictionary = @{
+                                      @"postsView": postsView,
+                                      @"postsTableView": postsTableViewController.view
+                                      };
+    
+    [postsView addSubview:postsTableViewController.view];
+    
+    [postsTableViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [postsView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[postsTableView]|"
+                                                                      options:0 metrics:nil views:viewsDictionary]];
+    [postsView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[postsTableView]|"
+                                                                      options:0 metrics:nil views:viewsDictionary]];
 }
 
 - (void)addToolbar {
@@ -85,7 +95,7 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
             DHLJekyll *jekyll = [[DHLJekyll alloc] initWithPath:[creationSheetPath stringValue]];
             
             [document setJekyll:jekyll];
-            [postsTableView reloadData];
+            [postsTableViewController.postsTableView reloadData];
         } else {
             [[self document] close];
         }
@@ -139,102 +149,6 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     }
     
     [[self window] beginSheet:previewWindowController.window completionHandler:nil];
-}
-
-#pragma mark -
-#pragma mark Table View Data Source
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    DHLDocument *document = (DHLDocument *)self.document;
-    DHLJekyll *jekyll = [document jekyll];
-    
-    return [[jekyll posts] count];
-}
-
-- (void)tableView:(NSTableView *)tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors {
-    DHLJekyll *jekyll = [[self document] jekyll];
-    
-    jekyll.posts = [[jekyll posts] sortedArrayUsingDescriptors:[tableView sortDescriptors]];
-    
-    [tableView reloadData];
-}
-
-#pragma mark -
-#pragma mark Table View Delegate
-
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    DHLPost *post = [self postForRow:row];
-    
-    DHLPostTableCellView *cellView = [tableView makeViewWithIdentifier:@"PostCell" owner:self];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    
-    cellView.title.stringValue = [post title];
-    cellView.contents.stringValue = [post text];
-    cellView.date.stringValue = [dateFormatter stringFromDate:[post date]];
-    
-    return cellView;
-}
-
-- (void)tableViewClicked {
-    [self openEditorForSelectedPost];
-}
-
-- (void)openEditorForSelectedPost {
-    [[self postForRow:[postsTableView clickedRow]] openEditor];
-}
-
-- (void)openFinderForSelectedPost {
-    [[self postForRow:[postsTableView clickedRow]] showInFinder];
-}
-
-- (void)deleteSelectedPost {
-    NSError *error;
-    
-    [[self postForRow:[postsTableView clickedRow]] deletePost:&error];
-    
-    if (error) {
-        NSAlert *alert = [[NSAlert alloc] init];
-        
-        [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:@"Unable to delete post."];
-        [alert setInformativeText:@"Lanyon was unable to delete the selected post."];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        
-        [alert beginSheetModalForWindow:[self window] completionHandler:nil];
-    }
-}
-
-- (DHLPost *)postForRow:(NSInteger)row {
-    if (row < 0) {
-        return nil;
-    }
-    
-    DHLDocument *document = (DHLDocument *)self.document;
-    DHLJekyll *jekyll = [document jekyll];
-    
-    return [[jekyll posts] objectAtIndex:row];
-}
-
-#pragma mark -
-#pragma mark Table View Context Menu
-
-- (IBAction)contextMenuOpen:(id)sender {
-    [self openEditorForSelectedPost];
-}
-
-- (IBAction)contextMenuViewBrowser:(id)sender {
-    // TODO: Implement me!
-}
-
-- (IBAction)contextMenuShowFinder:(id)sender {
-    [self openFinderForSelectedPost];
-}
-
-- (IBAction)contextMenuDelete:(id)sender {
-    [self deleteSelectedPost];
 }
 
 #pragma mark -

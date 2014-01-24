@@ -12,6 +12,8 @@
 		C31C18B8187C830C00E57635 /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C324DB0D187B9F920006E885 /* YAML.framework */; };
 		C32FD9F31890AD09009FD1D4 /* DHLPreviewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FD9F21890AD09009FD1D4 /* DHLPreviewWindowController.m */; };
 		C32FD9FD1891FC27009FD1D4 /* DHLJekyllConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FD9FC1891FC27009FD1D4 /* DHLJekyllConfig.m */; };
+		C32FDA011892EC80009FD1D4 /* DHLPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32FD9FF1892EC80009FD1D4 /* DHLPostsTableViewController.m */; };
+		C32FDA021892EC80009FD1D4 /* DHLPostsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32FDA001892EC80009FD1D4 /* DHLPostsTableViewController.xib */; };
 		C3C89AE51875D3DB002EA2B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */; };
 		C3C89AEF1875D3DB002EA2B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3C89AED1875D3DB002EA2B3 /* InfoPlist.strings */; };
 		C3C89AF11875D3DB002EA2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C89AF01875D3DB002EA2B3 /* main.m */; };
@@ -70,6 +72,9 @@
 		C32FD9F21890AD09009FD1D4 /* DHLPreviewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPreviewWindowController.m; sourceTree = "<group>"; };
 		C32FD9FB1891FC27009FD1D4 /* DHLJekyllConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLJekyllConfig.h; sourceTree = "<group>"; };
 		C32FD9FC1891FC27009FD1D4 /* DHLJekyllConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLJekyllConfig.m; sourceTree = "<group>"; };
+		C32FD9FE1892EC80009FD1D4 /* DHLPostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLPostsTableViewController.h; sourceTree = "<group>"; };
+		C32FD9FF1892EC80009FD1D4 /* DHLPostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLPostsTableViewController.m; sourceTree = "<group>"; };
+		C32FDA001892EC80009FD1D4 /* DHLPostsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHLPostsTableViewController.xib; sourceTree = "<group>"; };
 		C3C89AE11875D3DB002EA2B3 /* Lanyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lanyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C89AE41875D3DB002EA2B3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3C89AE71875D3DB002EA2B3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -182,6 +187,9 @@
 				C3C89B1D1875F041002EA2B3 /* DHLWindowController.h */,
 				C3C89B1E1875F041002EA2B3 /* DHLWindowController.m */,
 				C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */,
+				C32FD9FE1892EC80009FD1D4 /* DHLPostsTableViewController.h */,
+				C32FD9FF1892EC80009FD1D4 /* DHLPostsTableViewController.m */,
+				C32FDA001892EC80009FD1D4 /* DHLPostsTableViewController.xib */,
 				C3C89B2718765472002EA2B3 /* DHLPostTableCellView.h */,
 				C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */,
 				C3C89B1B1875E1D5002EA2B3 /* DHLCreationSheet.xib */,
@@ -328,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32FDA021892EC80009FD1D4 /* DHLPostsTableViewController.xib in Resources */,
 				C3C89B001875D3DB002EA2B3 /* Images.xcassets in Resources */,
 				C3C89B211875F041002EA2B3 /* DHLWindowController.xib in Resources */,
 				C30D132718830EFD0016B647 /* DHLPreviewSheet.xib in Resources */,
@@ -365,6 +374,7 @@
 				C3C89B3E18765DA4002EA2B3 /* scanner.c in Sources */,
 				C3C89B3C18765DA4002EA2B3 /* parser.c in Sources */,
 				C3C89B3D18765DA4002EA2B3 /* reader.c in Sources */,
+				C32FDA011892EC80009FD1D4 /* DHLPostsTableViewController.m in Sources */,
 				C3C89B3A18765DA4002EA2B3 /* emitter.c in Sources */,
 				C32FD9F31890AD09009FD1D4 /* DHLPreviewWindowController.m in Sources */,
 				C3C89B3918765DA4002EA2B3 /* dumper.c in Sources */,
