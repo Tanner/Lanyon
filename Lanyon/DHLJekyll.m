@@ -43,7 +43,7 @@ const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"
         if ([fileManager fileExistsAtPath:postsDirectory isDirectory:&directory]) {
             NSError *error;
             
-            NSArray *postFiles = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:[NSURL URLWithString:postsDirectory]
+            NSArray *postFiles = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:[NSURL fileURLWithPath:postsDirectory]
                        includingPropertiesForKeys:@[]
                                           options:NSDirectoryEnumerationSkipsHiddenFiles
                                             error:&error];
