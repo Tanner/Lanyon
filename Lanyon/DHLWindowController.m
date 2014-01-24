@@ -86,6 +86,8 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
             [jekyll setTitle:[creationSheetTitle stringValue]];
             
             [document setJekyll:jekyll];
+        } else {
+            [[self document] close];
         }
         
         creationSheet = nil;

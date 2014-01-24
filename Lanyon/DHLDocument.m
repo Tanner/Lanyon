@@ -68,6 +68,8 @@
 }
 
 - (void)close {
+    [super close];
+    
     [jekyll stopPreview];
 }
 
