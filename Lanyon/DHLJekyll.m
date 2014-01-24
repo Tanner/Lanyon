@@ -36,7 +36,7 @@ const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"
     [previewTask terminate];
 }
 
-- (void)loadPosts {
+- (NSArray *)posts {
     if (!posts) {
         NSString *postsDirectory = [path stringByAppendingPathComponent:@"_posts"];
         
@@ -46,10 +46,12 @@ const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"
         if ([fileManager fileExistsAtPath:postsDirectory isDirectory:&directory]) {
             NSError *error;
             
-            NSArray *postFiles = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:[NSURL fileURLWithPath:postsDirectory]
-                       includingPropertiesForKeys:@[]
-                                          options:NSDirectoryEnumerationSkipsHiddenFiles
-                                            error:&error];
+            NSURL *postsURL = [NSURL fileURLWithPath:postsDirectory];
+            
+            NSArray *postFiles = (NSMutableArray *) [fileManager contentsOfDirectoryAtURL:postsURL
+                                                               includingPropertiesForKeys:@[]
+                                                                                  options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                                                    error:&error];
             
             NSMutableArray *tempPosts = [[NSMutableArray alloc] init];
             
@@ -62,13 +64,6 @@ const NSString *exportEncoding = @"export LANG=\"en_US.UTF-8\"; export LC_ALL=\"
             self.posts = [NSArray arrayWithArray:tempPosts];
         }
     }
-}
-
-- (NSArray *)posts {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self loadPosts];
-    });
     
     return posts;
 }
