@@ -10,6 +10,7 @@
                 <outlet property="postsTableViewController" destination="s3g-5W-u0x" id="eN7-km-OyY"/>
                 <outlet property="postsView" destination="CeP-dO-qWP" id="wcf-lU-ngH"/>
                 <outlet property="sidebarView" destination="pnd-iK-YXC" id="Bbk-sS-zC3"/>
+                <outlet property="sidebarViewController" destination="cwP-Jc-dux" id="kd1-LZ-jj6"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>
@@ -19,7 +20,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="574" height="394"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="574" height="394"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -68,5 +69,6 @@
             </connections>
         </window>
         <viewController nibName="DHLPostsTableViewController" id="s3g-5W-u0x" customClass="DHLPostsTableViewController"/>
+        <viewController nibName="DHLSidebarViewController" id="cwP-Jc-dux" customClass="DHLSidebarViewController"/>
     </objects>
 </document>

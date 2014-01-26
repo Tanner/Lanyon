@@ -19,10 +19,10 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
 @implementation DHLWindowController
 
 @synthesize creation, creationSheet, creationSheetPath, creationSheetCreateButton;
-@synthesize postsTableViewController, previewWindowController;
+@synthesize sidebarViewController, postsTableViewController, previewWindowController;
 @synthesize postCount;
 
-@synthesize postsView;
+@synthesize postsView, sidebarView;
 
 - (id)init {
     if (self = [super initWithWindowNibName:@"DHLWindowController"]) {
@@ -53,9 +53,9 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     [self addToolbar];
     
     postsTableViewController.document = [self document];
+    sidebarViewController.document = [self document];
     
-    NSDictionary *viewsDictionary = @{
-                                      @"postsView": postsView,
+    NSDictionary *postsViewsDictionary = @{
                                       @"postsTableView": postsTableViewController.view
                                       };
     
@@ -64,9 +64,22 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     [postsTableViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [postsView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[postsTableView]|"
-                                                                      options:0 metrics:nil views:viewsDictionary]];
+                                                                      options:0 metrics:nil views:postsViewsDictionary]];
     [postsView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[postsTableView]|"
-                                                                      options:0 metrics:nil views:viewsDictionary]];
+                                                                      options:0 metrics:nil views:postsViewsDictionary]];
+    
+    NSDictionary *sidebarViewsDictionary = @{
+                                      @"sidebarView": sidebarViewController.view
+                                      };
+    
+    [sidebarView addSubview:sidebarViewController.view];
+    
+    [sidebarViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [sidebarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[sidebarView]|"
+                                                                      options:0 metrics:nil views:sidebarViewsDictionary]];
+    [sidebarView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[sidebarView]|"
+                                                                      options:0 metrics:nil views:sidebarViewsDictionary]];
 }
 
 - (void)addToolbar {

@@ -9,7 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 #import "DHLPreviewWindowController.h"
+
 #import "DHLPostsTableViewController.h"
+#import "DHLSidebarViewController.h"
 
 @interface DHLWindowController : NSWindowController <NSTextFieldDelegate, NSToolbarDelegate>
 
@@ -19,10 +21,13 @@
 @property (assign) IBOutlet NSTextField *creationSheetPath;
 @property (assign) IBOutlet NSButton *creationSheetCreateButton;
 
+@property (assign) IBOutlet DHLSidebarViewController *sidebarViewController;
 @property (assign) IBOutlet DHLPostsTableViewController *postsTableViewController;
+
 @property (nonatomic, retain) DHLPreviewWindowController *previewWindowController;
 
 @property (assign) IBOutlet NSView *postsView;
+@property (assign) IBOutlet NSView *sidebarView;
 
 @property (assign) IBOutlet NSTextField *postCount;
 
