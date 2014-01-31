@@ -16,7 +16,7 @@
 @implementation DHLPostsTableViewController
 
 @synthesize postsTableView;
-@synthesize document;
+@synthesize delegate, document;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,6 +68,10 @@
     cellView.date.stringValue = [dateFormatter stringFromDate:[post date]];
     
     return cellView;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    [delegate postSelectionDidChange:[self postForRow:[postsTableView selectedRow]]];
 }
 
 - (void)tableViewClicked {

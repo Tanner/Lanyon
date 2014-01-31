@@ -120,6 +120,7 @@
 		C3C89B3618765DA4002EA2B3 /* writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = writer.c; path = "yaml-0.1.4/src/writer.c"; sourceTree = "<group>"; };
 		C3C89B3718765DA4002EA2B3 /* yaml_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = yaml_private.h; path = "yaml-0.1.4/src/yaml_private.h"; sourceTree = "<group>"; };
 		C3C89B4018765DAC002EA2B3 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = "yaml-0.1.4/win32/config.h"; sourceTree = "<group>"; };
+		C3F7C9871899AF7700E880F0 /* DHLPostSelecting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHLPostSelecting.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +195,7 @@
 				C3C89B1F1875F041002EA2B3 /* DHLWindowController.xib */,
 				C32FD9FE1892EC80009FD1D4 /* DHLPostsTableViewController.h */,
 				C32FD9FF1892EC80009FD1D4 /* DHLPostsTableViewController.m */,
+				C3F7C9871899AF7700E880F0 /* DHLPostSelecting.h */,
 				C32FDA001892EC80009FD1D4 /* DHLPostsTableViewController.xib */,
 				C3C89B2718765472002EA2B3 /* DHLPostTableCellView.h */,
 				C3C89B2818765472002EA2B3 /* DHLPostTableCellView.m */,

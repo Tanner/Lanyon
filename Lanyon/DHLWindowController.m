@@ -55,6 +55,9 @@ static NSString *DHLPreviewToolbarItemIdentifier = @"LanyonToolbarPreviewItem";
     postsTableViewController.document = [self document];
     sidebarViewController.document = [self document];
     
+    postsTableViewController.delegate = sidebarViewController;
+    sidebarViewController.tableView = postsTableViewController.postsTableView;
+    
     NSDictionary *postsViewsDictionary = @{
                                       @"postsTableView": postsTableViewController.view
                                       };

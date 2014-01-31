@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 #import "DHLDocument.h"
+#import "DHLPostSelecting.h"
 
 @interface DHLPostsTableViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSTableView *postsTableView;
 
+@property (assign) id <DHLPostSelecting> delegate;
 @property (assign) DHLDocument *document;
 
 - (IBAction)contextMenuOpen:(id)sender;

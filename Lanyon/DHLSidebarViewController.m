@@ -10,7 +10,7 @@
 
 @implementation DHLSidebarViewController
 
-@synthesize document;
+@synthesize document, tableView, selectedPost;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -19,6 +19,10 @@
         // Initialization code here.
     }
     return self;
+}
+
+- (void)postSelectionDidChange:(DHLPost *)post {
+    [self setSelectedPost:post];    
 }
 
 @end
