@@ -13,8 +13,8 @@
 @implementation DHLPost
 
 @synthesize path, contents;
-@synthesize yaml, text, parsedYAML;
-@synthesize title, date;
+@synthesize yaml, text;
+@synthesize title, date, layout, permalink, published, categories, tags;
 
 - (id)initWithPath:(NSURL *)aPath {
     if (self = [super init]) {
@@ -29,19 +29,25 @@
         
         NSArray *components = [contents componentsSeparatedByString:@"---"];
         
-        yaml = components[1];
+        NSString *rawYAML = components[1];
         text = components[2];
         
         text = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        yaml = [NSString stringWithFormat:@"---%@---", yaml];
+        rawYAML = [NSString stringWithFormat:@"---%@---", rawYAML];
         
-        parsedYAML = [[YAMLSerialization objectsWithYAMLString:yaml
+        yaml = [[YAMLSerialization objectsWithYAMLString:rawYAML
                                                       options:kYAMLReadOptionStringScalars
                                                         error:nil] objectAtIndex:0];
-        
-        date = [NSDate dateWithNaturalLanguageString:[parsedYAML objectForKey:@"date"]];
-        title = [parsedYAML objectForKey:@"title"];
+
+        // Common front matter
+        title = [yaml objectForKey:@"title"];
+        date = [NSDate dateWithNaturalLanguageString:[yaml objectForKey:@"date"]];
+        layout = [yaml objectForKey:@"layout"];
+        permalink = [yaml objectForKey:@"permalink"];
+        published = [(NSString *) [yaml objectForKey:@"published"] compare:@"true"] == NSOrderedSame;
+        categories = [yaml objectForKey:@"categories"]; // TODO: Also support "category"
+        categories = [yaml objectForKey:@"tags"];
     }
     
     return self;
