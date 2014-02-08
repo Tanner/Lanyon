@@ -22,7 +22,7 @@
 }
 
 - (void)postSelectionDidChange:(DHLPost *)post {
-    [self setSelectedPost:post];    
+    [self setSelectedPost:post];
 }
 
 @end
