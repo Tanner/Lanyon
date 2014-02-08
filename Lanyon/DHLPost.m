@@ -47,7 +47,7 @@
         permalink = [yaml objectForKey:@"permalink"];
         published = [(NSString *) [yaml objectForKey:@"published"] compare:@"true"] == NSOrderedSame;
         categories = [yaml objectForKey:@"categories"]; // TODO: Also support "category"
-        categories = [yaml objectForKey:@"tags"];
+        tags = [yaml objectForKey:@"tags"];
     }
     
     return self;
