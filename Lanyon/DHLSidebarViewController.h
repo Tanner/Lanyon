@@ -18,4 +18,12 @@
 @property (assign) NSTableView *tableView;
 @property (nonatomic, retain) DHLPost *selectedPost;
 
+@property (assign) IBOutlet NSArrayController *categoriesArrayController;
+@property (assign) IBOutlet NSTableView *categoriesTableView;
+
+- (IBAction)categorySegmentedControllerClicked:(id)sender;
+
+- (void)addCategory;
+- (void)removeSelectedCategory;
+
 @end

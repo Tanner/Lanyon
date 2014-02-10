@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DHLSidebarViewController">
             <connections>
+                <outlet property="categoriesArrayController" destination="U08-vK-H9t" id="yoz-TD-q3G"/>
+                <outlet property="categoriesTableView" destination="fbo-Jl-Ldp" id="xXo-Lf-iYn"/>
                 <outlet property="view" destination="1" id="2"/>
             </connections>
         </customObject>
@@ -197,7 +199,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <connections>
-                                            <binding destination="U08-vK-H9t" name="value" keyPath="arrangedObjects" id="8DP-gp-aGo"/>
+                                            <binding destination="U08-vK-H9t" name="value" keyPath="arrangedObjects.name" id="4Y4-F8-HFA"/>
                                         </connections>
                                     </tableColumn>
                                 </tableColumns>
@@ -230,6 +232,9 @@
                             </segment>
                         </segments>
                     </segmentedCell>
+                    <connections>
+                        <action selector="categorySegmentedControllerClicked:" target="-2" id="FVt-nQ-Nig"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <constraints>
@@ -282,7 +287,10 @@
                 <constraint firstAttribute="trailing" secondItem="XZo-4b-bwh" secondAttribute="trailing" constant="8" id="zrU-fl-yy4"/>
             </constraints>
         </customView>
-        <arrayController objectClassName="NSString" id="U08-vK-H9t">
+        <arrayController objectClassName="DHLTag" id="U08-vK-H9t" userLabel="Categories Array Controller">
+            <declaredKeys>
+                <string>name</string>
+            </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.selectedPost.categories" id="G0R-Hb-Aed"/>
             </connections>

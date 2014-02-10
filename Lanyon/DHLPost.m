@@ -10,6 +10,8 @@
 
 #import "DHLPost.h"
 
+#import "DHLTag.h"
+
 @implementation DHLPost
 
 @synthesize path, contents;
@@ -48,6 +50,18 @@
         published = [(NSString *) [yaml objectForKey:@"published"] compare:@"true"] == NSOrderedSame;
         categories = [yaml objectForKey:@"categories"]; // TODO: Also support "category"
         tags = [yaml objectForKey:@"tags"];
+        
+        if (!categories) {
+            categories = [NSMutableArray array];
+        } else {
+            [categories enumerateObjectsUsingBlock:^(NSString *tag, NSUInteger i, BOOL *stop) {
+                categories[i] = [[DHLTag alloc] initWithName:tag];
+            }];
+        }
+        
+        if (!tags) {
+            tags = [NSMutableArray array];
+        }
     }
     
     return self;

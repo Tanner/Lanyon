@@ -8,9 +8,11 @@
 
 #import "DHLSidebarViewController.h"
 
+#import "DHLTag.h"
+
 @implementation DHLSidebarViewController
 
-@synthesize document, tableView, selectedPost;
+@synthesize document, tableView, selectedPost, categoriesArrayController, categoriesTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +25,31 @@
 
 - (void)postSelectionDidChange:(DHLPost *)post {
     [self setSelectedPost:post];
+}
+
+- (IBAction)categorySegmentedControllerClicked:(id)sender {
+    NSInteger clickedSegment = [sender selectedSegment];
+    
+    switch (clickedSegment) {
+        case 0:
+            [self addCategory];
+            break;
+        case 1:
+            [self removeSelectedCategory];
+            break;
+    }
+}
+
+- (void)addCategory {
+    [categoriesArrayController addObject:[[DHLTag alloc] initWithName:@"New Tag"]];
+}
+
+- (void)removeSelectedCategory {
+    NSInteger selectedRow = [categoriesTableView selectedRow];
+    
+    if (selectedRow != -1) {
+        [categoriesArrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndex:selectedRow]];
+    }
 }
 
 @end
